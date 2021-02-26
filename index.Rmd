@@ -88,15 +88,10 @@ layout: false
 class: inverse
 
 
-Wer ist Retter in der Not? 
 
---
-
-
-![Alt Text](https://media.giphy.com/media/VvxtXb86Lwicw/giphy.gif)
-
-<div style="text-align:center;">******Die Programmiersprache `R` ******<div> 
-
+```{r, echo = FALSE, fig.align="center", out.width="60%"}
+knitr::include_graphics("rrescue.gif")
+```
 
 
 
@@ -137,7 +132,7 @@ class: inverse
 
 --
 
-Vor allem: Das Beherrschen einer Programmiersprache wird im Zeitalter der Digitalisierung immer wichtiger
+**Vor allem**: Das Beherrschen einer Programmiersprache wird im Zeitalter der Digitalisierung immer wichtiger
 
 
 ---
@@ -234,9 +229,101 @@ class: middle
 
 - dazu besuchen wir [arc2r.github.io/book](https://arc2r.github.io/book/)
 
+???
+
+- Handling vom buch zeigen: TOC ein aus, Suchfunktion, Schriftgrösse und Art
+- Warum englisch? um die Internationale R und GIS Community involvieren zu können 
 
 ---
 layout: false
 
 <iframe style="position: absolute; height: 90%; border: none" src="https://arc2r.github.io/book/" name="book", width = "80%">Alternativtext</iframe>
+
+
+---
+
+layout: true
+class: inverse
+
+## Grundsätzliche Unterschiede zwischen ArcGIS und `R`
+
+
+---
+
+Grundbaustein in ArcMap ist die *Map*. 
+
+???
+
+Sie beansprucht am meisten Platz im Interface  
+
+
+
+```{r, echo = FALSE}
+knitr::include_graphics("geobim.jpg")
+```
+
+---
+
+Grundbaustein in `R` ist das *Script*
+
+???
+
+Es beansprucht am meisten Platz im Interface  
+
+
+```{r, echo = FALSE}
+knitr::include_graphics("rstudio.jpg")
+```
+
+---
+
+
+Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI). Auf CRAN werden zurzeit >17'000 Packages angeboten, von fast so vielen Entwicklern.
+
+<!-- es gibt immer N+1 wege ein Problem in R zu lösen -->
+--
+
+
+Während ESRI für viele Funktionen eigene Namen entwickelt hat, werden in `R` die branchenüblichen Standards verwendet. <!-- Beispiel Clip, Select,  -->  
+
+--
+
+ArcGIS Versucht grundätzlich, ein Tool für jedes Problem zu entwickeln. In den meisten `R` Packages versucht man ein minimales Set an Funktionen anzubieten, die auf die eignen bedürfnissen angepasst werden kann. 
+
+
+<!-- Bild einfügen vom Netzwerkdiagramm -->
+
+---
+
+
+layout: true
+class: inverse
+
+## Wo brilliert ArcGIS gegenüber `R`?
+
+
+---
+
+- Georeferenzieren
+
+```{r, echo = FALSE}
+knitr::include_graphics("https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg")
+```
+
+
+---
+
+- Karten digitalisieren
+
+
+```{r, echo = FALSE}
+knitr::include_graphics("https://desktop.arcgis.com/de/arcmap/10.3/manage-data/creating-new-features/GUID-D6396C58-0375-402D-B3C2-441E76A18AED-web.png")
+```
+
+
+
+<!-- Quck and dirty map? -->
+
+
+
 
