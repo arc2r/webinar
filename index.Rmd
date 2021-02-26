@@ -1,7 +1,10 @@
 ---
 title: "All things `R` spatial"
-subtitle: "Slides für das Webinar vom 3. März 2021"
-output: html_document
+subtitle: Slides für das Webinar vom 3. März 2021
+output:
+  html_document: default
+  github_document: 
+    pandoc_args: "--output=Readme.md" 
 ---
 
 Slides Übersicht:
