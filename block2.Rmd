@@ -1,6 +1,6 @@
 ---
-title: "All Things `R` Spatial"
-subtitle: "🖈 <br/> Eine Einführung in GIS in R"
+title: "All Things `R` spatial: Räumliche Daten in `R`"
+subtitle: "🖈 <br/> Teil 2(von 4)"
 author: "Nils Ratnaweera"
 institute: "ZHAW IUNR "
 date: "`r Sys.Date()`"
@@ -12,7 +12,6 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
-template: blocksep
 
 # Block 2: Loslegen mit *All things `R` spatial*
 
