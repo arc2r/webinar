@@ -37,25 +37,18 @@ knitr::include_graphics("logo.svg")
 
 ---
 layout: false
+name: woraus
 class: inverse
 
 # Woraus besteht arc2r?
 
 Die Lernumgebung arc2r besteht aus folgenden Komponenten:
 
---
-
 - a) Webbasiertes Lehrmittel (*arc2r/book*)
-
---
-
 - b) RStudio im Browser\*
+- c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries (*arc2r/arc2r*)
 
 .footnote[\* wird von der ICT ZHAW zur Verfügung gestellt]
-
---
-
-- c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries (*arc2r/arc2r*)
 
 
 ---
@@ -104,6 +97,10 @@ class: inverse
   - kommentierbar <!-- demo kommentare -->
 ---
 
+template: woraus
+
+---
+
 ### b) RStudio im Browser
 
 - wurde nicht im Projekt entwickelt (wird von der ICT ZHAW zur Verfügung gestellt)
@@ -126,6 +123,9 @@ class: inverse
 
 ---
 
+template: woraus
+
+---
 ### c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries
 
 Um die Distanz *lesen → selbst ausführen* weiter zu verkürzen, haben wir ein `R`-Package entwickelt.
