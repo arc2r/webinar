@@ -1,0 +1,204 @@
+---
+title: "panelset<br>for xaringan"
+pagetitle: "&#x1F5C2; panelset | xaringanExtra"
+subtitle: "&#x1F5C2;"
+author: "<a href='https://www.garrickadenbuie.com/'>Garrick Aden-Buie<a>"
+date: 'xaringanExtra'
+output:
+  xaringan::moon_reader:
+    css: [robot-fonts, robot]
+    lib_dir: libs
+---
+
+```{r xaringan-panelset, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_panelset()
+```
+
+### &#x1F456; Fancy Panels &#x2728;
+
+.panelset[
+.panel[.panel-name[R Code]
+
+```{r oplot, fig.show='hide'}
+library(ggplot2)
+ggplot(Orange) +
+  aes(x = age, y = circumference, colour = Tree) +
+  geom_point() +
+  geom_line() +
+  guides(colour = "none") +
+  theme_bw()
+```
+]
+
+.panel[
+.panel-name[
+Plot
+]
+
+<img src="`r knitr::fig_chunk("oplot", ".png")`" height="425px" />
+]
+
+.panel[
+
+Oops, I forgot to give this panel a name &#x1F937;&#x200D;&#x2642;&#xFE0F;
+
+]
+]
+
+---
+
+### Panelset Chunks
+
+You can use the `panelset` chunk option to create two panels from a code chunk:
+the "Code" and "Output".
+
+.panelset[
+
+.panel[.panel-name[Chunk 1]
+
+````markdown
+```{r panelset = TRUE, results = "hold"}`r ''`
+# Set panelset = TRUE to create "Code" and "Output" tabs
+# Use results = "hold" when chunk contains multiple expressions
+print("Oak is strong and also gives shade.")
+print("The lake sparkled in the red hot sun.")
+```
+````
+
+]
+
+```{r panelset = TRUE, results = "hold"}
+# Set panelset = TRUE to create "Code" and "Output" tabs
+# Use results = "hold" when chunk contains multiple expressions
+print("Oak is strong and also gives shade.")
+print("The lake sparkled in the red hot sun.")
+```
+
+.panel[.panel-name[Chunk 2]
+
+Use a named vector in `panelset` to set the `source` and `output` panel tab names.
+
+````markdown
+```{r panelset = c(source = "ggplot2", output = "Plot")}`r ''`
+ggplot(Orange) +
+  aes(x = age, y = circumference, colour = Tree) +
+  geom_point() +
+  geom_line() +
+  guides(colour = "none") +
+  theme_bw()
+```
+````
+
+]
+
+```{r panelset = c(source = "ggplot2", output = "Plot")}
+ggplot(Orange) +
+  aes(x = age, y = circumference, colour = Tree) +
+  geom_point() +
+  geom_line() +
+  guides(colour = "none") +
+  theme_bw()
+```
+
+]
+
+
+---
+
+## How to do this in one easy template
+
+Wrap everything in `.panelset[...]` and create a new panel with
+
+```markdown
+.panel[.panel-name[NAME]
+...content...
+]
+```
+
+&#x1F448; The previous slide looks something like this
+
+````markdown
+.panelset[
+.panel[.panel-name[R Code]
+
+```{r oplot, fig.show='hide'}`r ''`
+# ... r code ...
+```
+]
+
+.panel[.panel-name[Plot]
+
+![](`r knitr::inline_expr('knitr::fig_chunk("oplot", ".png")')`)
+]
+]
+````
+
+---
+
+## Customize appearance 
+
+
+```{r echo=FALSE}
+xaringanExtra::style_panelset_tabs(
+  active_foreground = "#0051BA",
+  hover_foreground = "#d22",
+  font_family = "Roboto"
+)
+```
+
+.panelset[
+.panel[.panel-name[style_panelset_tabs()]
+
+You can use `style_panelset_tabs()`
+
+````markdown
+```{r echo=FALSE}`r ''`
+xaringanExtra::style_panelset_tabs(
+  active_foreground = "#0051BA",
+  hover_foreground = "#d22",
+  font_family = "Roboto"
+)
+```
+````
+]
+
+.panel[.panel-name[CSS Custom Properties]
+
+Or use CSS directly...
+
+````markdown
+```{css echo=FALSE}`r ''`
+.panelset {
+  --panel-tab-foreground: currentColor;
+  --panel-tab-active-foreground: #0051BA;
+  --panel-tab-hover-foreground: #d22;
+  --panel-tabs-border-bottom: #ddd;
+  --panel-tab-inactive-opacity: 0.5;
+  --panel-tab-font-family: Roboto, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;\
+}
+```
+````
+
+See `?style_panelset_tabs()` for the complete list of CSS properties.
+]
+]
+
+---
+class: center middle
+
+[blogdown]: https://bookdown.org/yihui/blogdown/
+
+## It also works in<br>R Markdown and [blogdown]!
+
+Check out [the R Markdown panelset demo](rmarkdown.html)
+to see _panelset_ in action!
+
+
+---
+class: center middle
+
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="25%" alt="GitHub Octocat Logo" />
+
+### [gadenbuie/xaringanExtra](https://github.com/gadenbuie/xaringanExtra)
+
