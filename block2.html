@@ -4,7 +4,7 @@
     <title>All Things R spatial: Räumliche Daten in R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nils Ratnaweera" />
-    <meta name="date" content="2021-02-26" />
+    <meta name="date" content="2021-02-28" />
     <script src="libs/header-attrs-2.6/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
@@ -14,118 +14,142 @@
 class: center, middle, inverse, title-slide
 
 # All Things <code>R</code> spatial: Räumliche Daten in <code>R</code>
-## 🖈 <br/> Teil 2(von 4)
+## 🖈 <br/> Teil 2 (von 4)
 ### Nils Ratnaweera
 ### ZHAW IUNR
-### 2021-02-26
+### 2021-02-28
 
 ---
 
 
-# Block 2: Loslegen mit *All things `R` spatial*
+class: middle, center
+
+# Block 2: Was haben wir entwickelt?
+
 
 ---
-
 layout: true
+# Was haben wir entwickelt?
+
+
+---
 class: inverse
 
-## Erste Schritte
+Eine Lernumgebung, um den Wechsel `R` → ArcGIS zu erleichtern
+--
 
----
-class: middle
-- Mit ein bisschen Erfahrung in R ist die Handhabung von Geodaten Kinderleicht
-
-- Schauen wir uns mal die Lernumgebung an, die wir entwickelt haben
-
-- dazu besuchen wir [arc2r.github.io/book](https://arc2r.github.io/book/)
-
-???
-
-- Handling vom buch zeigen: TOC ein aus, Suchfunktion, Schriftgrösse und Art
-- Warum englisch? um die Internationale R und GIS Community involvieren zu können 
+&lt;img src="logo.svg" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 layout: false
-
-&lt;iframe style="position: absolute; height: 90%; border: none" src="https://arc2r.github.io/book/" name="book", width = "80%"&gt;Alternativtext&lt;/iframe&gt;
-
-
----
-
-layout: true
 class: inverse
 
-## Grundsätzliche Unterschiede zwischen ArcGIS und `R`
+# Woraus besteht arc2r?
 
-
----
-
-Grundbaustein in ArcMap ist die *Map*. 
-
-???
-
-Sie beansprucht am meisten Platz im Interface  
-
-
-
-&lt;img src="geobim.jpg" width="2816" /&gt;
-
----
-
-Grundbaustein in `R` ist das *Script*
-
-???
-
-Es beansprucht am meisten Platz im Interface  
-
-
-&lt;img src="rstudio.jpg" width="2300" /&gt;
-
----
-
-
-Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI). Auf CRAN werden zurzeit &gt;17'000 Packages angeboten, von fast so vielen Entwicklern.
-
-&lt;!-- es gibt immer N+1 wege ein Problem in R zu lösen --&gt;
---
-
-
-Während ESRI für viele Funktionen eigene Namen entwickelt hat, werden in `R` die branchenüblichen Standards verwendet. &lt;!-- Beispiel Clip, Select,  --&gt;  
+Die Lernumgebung arc2r besteht aus folgenden Komponenten:
 
 --
 
-ArcGIS Versucht grundätzlich, ein Tool für jedes Problem zu entwickeln. In den meisten `R` Packages versucht man ein minimales Set an Funktionen anzubieten, die auf die eignen bedürfnissen angepasst werden kann. 
+- a) Webbasiertes Lehrmittel (*arc2r/book*)
 
+--
 
-&lt;!-- Bild einfügen vom Netzwerkdiagramm --&gt;
+- b) RStudio im Browser\*
+
+.footnote[\* wird von der ICT ZHAW zur Verfügung gestellt]
+
+--
+
+- c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries (*arc2r/arc2r*)
+
 
 ---
-
-
 layout: true
-class: inverse
+class: inverse 
 
-## Wo brilliert ArcGIS gegenüber `R`?
-
-
----
-
-- Georeferenzieren
-
-![](https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg)&lt;!-- --&gt;
-
+# Im Detail
 
 ---
 
-- Karten digitalisieren
+### a) Webbasiertes Lehrmittel
 
+- entwickelt in `R` mit `RMarkdown` und `Bookdown`
+--
 
-![](https://desktop.arcgis.com/de/arcmap/10.3/manage-data/creating-new-features/GUID-D6396C58-0375-402D-B3C2-441E76A18AED-web.png)&lt;!-- --&gt;
+  - Text und R-Code existieren im gleichen Dokument
+--
 
+  - Kein Copy &amp; Paste von Code bzw. Code-outputs (z.B. Grafiken)
+--
 
+- Source Code auf Github
+--
 
-&lt;!-- Quck and dirty map? --&gt;
+  - ermöglicht ein hohes Grad an Kollaboration
+--
 
+  - soll durch die Community weiterentwickelt werden
+--
+
+  - erhöht die Sichtbarkeit
+--
+
+- webbasiert bedeutet: 
+--
+
+  - responsive &lt;!-- screenshot tablet --&gt;
+--
+
+  - interaktiv &lt;!-- demo webmap --&gt;
+--
+
+  - anpassbar &lt;!-- demo schriftarten, -grösse, Inhaltsverzeichnis --&gt;
+--
+
+  - kommentierbar &lt;!-- demo kommentare --&gt;
+---
+
+### b) RStudio im Browser
+
+- wurde nicht im Projekt entwickelt (wird von der ICT ZHAW zur Verfügung gestellt)
+
+--
+
+- ermöglicht schneller Einstieg mit ZHAW Kürzel / Passwort
+
+--
+
+- Keine Installation von R / RStudio notwendig
+
+--
+
+- ist Betriebssystem unabhängig
+
+--
+
+- verkürzt die Distanz *lesen* zu *→ selbst ausführen*
+
+---
+
+### c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries
+
+Um die Distanz *lesen → selbst ausführen* weiter zu verkürzen, haben wir ein `R`-Package entwickelt.
+
+--
+
+Wird dieses Package installiert, enthält der Nutzer / die Nutzerin:
+
+--
+
+- alle Geodatensätze, die wir im Lehrmittel verwenden
+
+--
+
+- alle Libraries, die wir im Lehrmittel verwenden
+
+--
+
+- der Gesamte Code, die wir im Lehrmittel verwenden (als RMarkdown Template)
 
 
 

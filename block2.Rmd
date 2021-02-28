@@ -1,6 +1,6 @@
 ---
 title: "All Things `R` spatial: Räumliche Daten in `R`"
-subtitle: "🖈 <br/> Teil 2(von 4)"
+subtitle: "🖈 <br/> Teil 2 (von 4)"
 author: "Nils Ratnaweera"
 institute: "ZHAW IUNR "
 date: "`r Sys.Date()`"
@@ -13,118 +13,138 @@ output:
       countIncrementalSlides: false
 ---
 
-# Block 2: Loslegen mit *All things `R` spatial*
+class: middle, center
+
+# Block 2: Was haben wir entwickelt?
+
 
 ---
-
 layout: true
+# Was haben wir entwickelt?
+
+
+---
 class: inverse
 
-## Erste Schritte
+Eine Lernumgebung, um den Wechsel `R` → ArcGIS zu erleichtern
+--
 
----
-class: middle
-- Mit ein bisschen Erfahrung in R ist die Handhabung von Geodaten Kinderleicht
+```{r, echo = FALSE, fig.align='center', out.width="50%"}
 
-- Schauen wir uns mal die Lernumgebung an, die wir entwickelt haben
+knitr::include_graphics("logo.svg")
 
-- dazu besuchen wir [arc2r.github.io/book](https://arc2r.github.io/book/)
-
-???
-
-- Handling vom buch zeigen: TOC ein aus, Suchfunktion, Schriftgrösse und Art
-- Warum englisch? um die Internationale R und GIS Community involvieren zu können 
+```
 
 ---
 layout: false
-
-<iframe style="position: absolute; height: 90%; border: none" src="https://arc2r.github.io/book/" name="book", width = "80%">Alternativtext</iframe>
-
-
----
-
-layout: true
 class: inverse
 
-## Grundsätzliche Unterschiede zwischen ArcGIS und `R`
+# Woraus besteht arc2r?
 
-
----
-
-Grundbaustein in ArcMap ist die *Map*. 
-
-???
-
-Sie beansprucht am meisten Platz im Interface  
-
-
-
-```{r, echo = FALSE}
-knitr::include_graphics("geobim.jpg")
-```
-
----
-
-Grundbaustein in `R` ist das *Script*
-
-???
-
-Es beansprucht am meisten Platz im Interface  
-
-
-```{r, echo = FALSE}
-knitr::include_graphics("rstudio.jpg")
-```
-
----
-
-
-Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI). Auf CRAN werden zurzeit >17'000 Packages angeboten, von fast so vielen Entwicklern.
-
-<!-- es gibt immer N+1 wege ein Problem in R zu lösen -->
---
-
-
-Während ESRI für viele Funktionen eigene Namen entwickelt hat, werden in `R` die branchenüblichen Standards verwendet. <!-- Beispiel Clip, Select,  -->  
+Die Lernumgebung arc2r besteht aus folgenden Komponenten:
 
 --
 
-ArcGIS Versucht grundätzlich, ein Tool für jedes Problem zu entwickeln. In den meisten `R` Packages versucht man ein minimales Set an Funktionen anzubieten, die auf die eignen bedürfnissen angepasst werden kann. 
+- a) Webbasiertes Lehrmittel (*arc2r/book*)
 
+--
 
-<!-- Bild einfügen vom Netzwerkdiagramm -->
+- b) RStudio im Browser\*
+
+.footnote[\* wird von der ICT ZHAW zur Verfügung gestellt]
+
+--
+
+- c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries (*arc2r/arc2r*)
+
 
 ---
-
-
 layout: true
-class: inverse
+class: inverse 
 
-## Wo brilliert ArcGIS gegenüber `R`?
-
-
----
-
-- Georeferenzieren
-
-```{r, echo = FALSE}
-knitr::include_graphics("https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg")
-```
-
+# Im Detail
 
 ---
 
-- Karten digitalisieren
+### a) Webbasiertes Lehrmittel
 
+- entwickelt in `R` mit `RMarkdown` und `Bookdown`
+--
 
-```{r, echo = FALSE}
-knitr::include_graphics("https://desktop.arcgis.com/de/arcmap/10.3/manage-data/creating-new-features/GUID-D6396C58-0375-402D-B3C2-441E76A18AED-web.png")
-```
+  - Text und R-Code existieren im gleichen Dokument
+--
 
+  - Kein Copy & Paste von Code bzw. Code-outputs (z.B. Grafiken)
+--
 
+- Source Code auf Github
+--
 
-<!-- Quck and dirty map? -->
+  - ermöglicht ein hohes Grad an Kollaboration
+--
 
+  - soll durch die Community weiterentwickelt werden
+--
+
+  - erhöht die Sichtbarkeit
+--
+
+- webbasiert bedeutet: 
+--
+
+  - responsive <!-- screenshot tablet -->
+--
+
+  - interaktiv <!-- demo webmap -->
+--
+
+  - anpassbar <!-- demo schriftarten, -grösse, Inhaltsverzeichnis -->
+--
+
+  - kommentierbar <!-- demo kommentare -->
+---
+
+### b) RStudio im Browser
+
+- wurde nicht im Projekt entwickelt (wird von der ICT ZHAW zur Verfügung gestellt)
+
+--
+
+- ermöglicht schneller Einstieg mit ZHAW Kürzel / Passwort
+
+--
+
+- Keine Installation von R / RStudio notwendig
+
+--
+
+- ist Betriebssystem unabhängig
+
+--
+
+- verkürzt die Distanz *lesen* zu *→ selbst ausführen*
+
+---
+
+### c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries
+
+Um die Distanz *lesen → selbst ausführen* weiter zu verkürzen, haben wir ein `R`-Package entwickelt.
+
+--
+
+Wird dieses Package installiert, enthält der Nutzer / die Nutzerin:
+
+--
+
+- alle Geodatensätze, die wir im Lehrmittel verwenden
+
+--
+
+- alle Libraries, die wir im Lehrmittel verwenden
+
+--
+
+- der Gesamte Code, die wir im Lehrmittel verwenden (als RMarkdown Template)
 
 
 
