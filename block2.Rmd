@@ -1,6 +1,6 @@
 ---
 title: "All Things `R` spatial: Räumliche Daten in `R`"
-subtitle: "Teil 2 (von 4)"
+subtitle: "Teil 2: Das Produkt"
 author: "Nils Ratnaweera (ZHAW)"
 date: "`r Sys.Date()`"
 output:
@@ -286,10 +286,10 @@ template: detail-virtuallab
 
 .right-column[
 
-### R Package  `r fa("tools")` 
+### R Package  `r fa("tools")`
 
 - verkürzt die Distanz *lesen → selbst ausführen*
-- Auslieferung von: 
+- Auslieferung von *Geodaten*, *Libraries* und *Code*
 
 .panelset[
 .panel[.panel-name[Geodaten]
@@ -302,16 +302,17 @@ knitr::include_graphics("geodata.jpg")
 
 .panel[.panel-name[Libraries]
 
-```{r, echo = FALSE}
-knitr::include_graphics("rmarkdown-example-output.jpg")
+installiert alle benötigten Libraries automatisch
 
+```{r, eval = FALSE}
+remotes::install_github("arc2r/arc2r", dependencies = TRUE)
 ```
 ]
 
 .panel[.panel-name[Code]
 
 ```{r, echo = FALSE}
-knitr::include_graphics("rmarkdown-example-output.jpg")
+knitr::include_graphics("choose_chapter.jpg")
 
 ```
 ]

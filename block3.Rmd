@@ -1,6 +1,6 @@
 ---
 title: "All Things `R` spatial: Räumliche Daten in `R`"
-subtitle: "Teil 3 (von 4)"
+subtitle: "Teil 3: Erste Schritte"
 author: "Nils Ratnaweera (ZHAW)"
 date: "`r Sys.Date()`"
 output:
@@ -18,111 +18,86 @@ output:
 layout: true
 class: inverse
 
-## Erste Schritte
+```{r, echo = FALSE}
+library(fontawesome)
+xaringanExtra::use_panelset()
+```
+
+## Erste Schritte `r fa("shoe-prints")`
 
 ---
-class: middle
 
 - Mit ein bisschen Erfahrung in R ist die Handhabung von Geodaten kinderleicht
 
+--
+
 - Schauen wir uns mal die Lernumgebung an, die wir entwickelt haben
+
+--
 
 - dazu besuchen wir [arc2r.github.io/book](https://arc2r.github.io/book/)
 
 ???
 
-- Handling vom buch zeigen: TOC ein aus, Suchfunktion, Schriftgrösse und Art
+- Handling vom Buch: TOC ein aus, Suchfunktion, Schriftgrösse und Art
 - Warum englisch? um die Internationale R und GIS Community involvieren zu können 
 
 ---
 layout: false
 
-<iframe style="position: absolute; height: 90%; border: none" src="https://arc2r.github.io/book/" name="book", width = "80%">Alternativtext</iframe>
+<TABLE CELLPADDING="2" CELLSPACING="3", style = "border-collapse:collapse; font-size: 75%; position: absolute; bottom: 50px; left:10px">
+  <colgroup>
+         <col span = 1, style="width: 12%; border-right: solid 1.5px; border-left: solid 1.5px">
+         <col span = 1, style="width: 22%; border-right: solid 0.5px #E1DEE0">
+         <col span = 1, style="width: 22%; border-right: solid 1.5px">
+         <col span = 1, style="width: 22%; border-right: solid 0.5px #E1DEE0">
+         <col span = 1, style="width: 22%; border-right: solid 1.5px">
+  </colgroup>
+   <TR>
+      <TH></TH>
+      <TH COLSPAN = "2">on your local machine</TH>
+      <TH COLSPAN = "2">in the cloud</TH>
+   </TR>
+   <TR style = "border-bottom: 1px solid black">
+      <TD></TD>
+      <TD>a RStudio</TD>
+      <TD>b different IDE</TD>
+      <TD>c <a href="https://rstudio-ide.zhaw.ch)">ZHAW's Cloud</a></TD>
+      <TD>d <a href="https://rstudio.cloud)">Rstudio Cloud</a></TD>
+
+    </TR>
+   <TR>
+      <TD>1. Download and install R</TD>
+      <TD COLSPAN = "2" ALIGN = "CENTER"> <a href="https://cran.r-project.org/)">CRAN</a>  </TD>
+      <TD COLSPAN = "2" ALIGN = "CENTER">this step is not necessary</TD>
+      
+   </TR>
+   <TR>
+      <TD>2. Download and install IDE</TD>
+      <TD><a href="https://rstudio.com/products/rstudio/download/	)">RStudio</a></TD>
+      <TD>from the IDEs website</TD>
+      <TD COLSPAN = "2" ALIGN = "CENTER">this step is not necessary</TD>
+
+   </TR>
+   <TR>
+     <TD>3. Install the accompanying R Package "arc2r"	</TD>
+     <TD COLSPAN = "2" ALIGN = "CENTER"><code>install_github("arc2r/arc2r")<br> # more detail below</code></TD>
+     <TD>this step is not necessary	</TD>
+     <TD><code><code>install_github("arc2r/arc2r")<br> # more detail below</code></TD>
+   </TR>
+   <TR>
+     <TD>4. Create a new Project using the Templates	</TD>
+     <TD>see Details below</TD>
+     <TD>this feature is not available</TD>
+     <TD>see Details below</TD>
+     <TD>this feature is not available</TD>
+
+   </TR>
+   
+</TABLE>
 
 
 ---
-
-layout: true
-class: inverse
-
-## Grundsätzliche Unterschiede zwischen ArcGIS und `R`
-
-
----
-
-Grundbaustein in ArcMap ist die *Map*. 
-
-???
-
-Sie beansprucht am meisten Platz im Interface  
-
-
-
-```{r, echo = FALSE}
-knitr::include_graphics("geobim.jpg")
-```
-
----
-
-Grundbaustein in `R` ist das *Script*
-
-???
-
-Es beansprucht am meisten Platz im Interface  
-
-
-```{r, echo = FALSE}
-knitr::include_graphics("rstudio.jpg")
-```
-
----
-
-
-Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI). Auf CRAN werden zurzeit >17'000 Packages angeboten, von fast so vielen Entwicklern.
-
-<!-- es gibt immer N+1 wege ein Problem in R zu lösen -->
---
-
-
-Während ESRI für viele Funktionen eigene Namen entwickelt hat, werden in `R` die branchenüblichen Standards verwendet. <!-- Beispiel Clip, Select,  -->  
-
---
-
-ArcGIS Versucht grundätzlich, ein Tool für jedes Problem zu entwickeln. In den meisten `R` Packages versucht man ein minimales Set an Funktionen anzubieten, die auf die eignen bedürfnissen angepasst werden kann. 
-
-
-<!-- Bild einfügen vom Netzwerkdiagramm -->
-
----
-
-
-layout: true
-class: inverse
-
-## Wo brilliert ArcGIS gegenüber `R`?
-
-
----
-
-- Georeferenzieren
-
-```{r, echo = FALSE}
-knitr::include_graphics("https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg")
-```
-
-
----
-
-- Karten digitalisieren
-
-
-```{r, echo = FALSE}
-knitr::include_graphics("https://desktop.arcgis.com/de/arcmap/10.3/manage-data/creating-new-features/GUID-D6396C58-0375-402D-B3C2-441E76A18AED-web.png")
-```
-
-
-
-<!-- Quck and dirty map? -->
 
 
 

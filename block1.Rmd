@@ -1,6 +1,6 @@
 ---
 title: "All Things `R` spatial: Räumliche Daten in `R`"
-subtitle: "Teil 1 (von 4)"
+subtitle: "Teil 1: Die Ausgangslage"
 author: "Nils Ratnaweera (ZHAW)"
 date: "`r Sys.Date()`"
 output:
