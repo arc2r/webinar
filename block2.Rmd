@@ -37,10 +37,17 @@ class: inverse
 
 Eine *Lernumgebung*, um den Wechsel `R` → ArcGIS zu erleichtern
 
-Aufgeteilt in zwei Komponenten (Arbeitspakete):
+--
 
-1. `r fa("box-open")` Webbasiertes Lehrmittel
-2. `r fa("box-open")` Virtual Lab im Browser
+Aufgeteilt in zwei Komponenten (Arbeitspakete `r fa("box-open")`):
+
+--
+
+## .center[`r fa("box-open")` Webbasiertes Lehrmittel]
+
+--
+
+## .center[`r fa("box-open")` Virtual Lab im Browser]
 --
 
   - ZHAW-RStudio (rstudio.zhaw.ch)
@@ -73,23 +80,18 @@ template: detail-lehrmittel
 ### RMarkdown  `r fa("markdown")` 
 
 - Text und R-Code existieren im *gleichen* Dokument
-- Kein Copy & Paste von Code bzw. dessen Outputs <!-- Grafiken, Meldungen, Karten -->
+- Kein Copy & Paste von Code bzw. dessen Outputs 
 
 ]
 
 
+???
+
+Outputs wie zum Beispiel Grafiken, Messages, Karten
+
 ---
 layout: false
 class: inverse
-
-```{r, echo = FALSE, out.width="75%"}
-
-knitr::include_graphics(c("rmarkdown-example-output.jpg"))
-
-
-```
-
----
 
 .panelset[
 .panel[.panel-name[RMarkdown]
@@ -116,31 +118,133 @@ template: detail-lehrmittel
 
 ### Source Code auf Github  `r fa("github-square")` 
 
-- ermöglicht ein *hohes Grad* an Kollaboration (international)
-- soll durch die Community weiterentwickelt werden
-- erhöht die Sichtbarkeit
+- ermöglicht ein *hohes Grad* an Kollaboration 
 
-<!-- Bild einfügen -->
+```{r, echo = FALSE}
+knitr::include_graphics("Git-Network-dark.jpg")
+
+```
+
 
 ]
 
+
+---
+
+template: detail-lehrmittel
+
+.right-column[
+
+### Source Code auf Github  `r fa("github-square")` 
+
+- Ressource soll durch die Community weiterentwickelt werden (*Pull requests*)
+
+```{r, echo = FALSE}
+knitr::include_graphics("gh-pullrequests-dark.jpg")
+
+```
+
+
+]
+
+
+---
+
+template: detail-lehrmittel
+
+.right-column[
+
+### Source Code auf Github  `r fa("github-square")` 
+
+- erhöht die Sichtbarkeit
+
+```{r, echo = FALSE}
+knitr::include_graphics("gh-stars-dark.jpg")
+
+```
+
+
+]
+
+???
+
+  github ist das "Facebook" von Opensource projekten und offenen lehrmitteln
+  
 
 ---
 template: detail-lehrmittel
 
 .right-column[
 
-### Webbasiert bedeutet  `r fa("internet-explorer")` 
+### Webbasiert bedeutet *responsive*  
 
-- responsive <!-- screenshot tablet -->
-- interaktiv <!-- demo webmap -->
-- anpassbar <!-- demo schriftarten, -grösse, Inhaltsverzeichnis -->
-- kommentierbar <!-- demo kommentare -->
 
-<!-- Bild einfügen -->
+<img hspace = "10px", src="responsive-ipad.png" width="50%"/>
+<img src="responsive-nexus5x.png" width="20%"/>
+
 
 ]
 
+
+???
+
+Die Unterlagen lassen sich sehr elegant auf externen Geräten wie Tables oder smartphones darstellen. Praktisch damit der Computer bildschirm nicht überladen ist (BYOD!)
+
+---
+template: detail-lehrmittel
+
+.right-column[
+
+### Webbasiert bedeutet *interaktiv *  
+
+
+<iframe style="position: absolute; height: 50%; border: none" src="https://arc2r.github.io/book/" name="book", width = "65%">Alternativtext</iframe>
+
+
+]
+
+
+???
+
+- Menu auf/zu klappen
+- Suchfenster
+
+---
+template: detail-lehrmittel
+
+.right-column[
+
+### Webbasiert bedeutet *anpassbar*  
+
+
+<iframe style="position: absolute; height: 50%; border: none" src="https://arc2r.github.io/book/" name="book", width = "65%">Alternativtext</iframe>
+
+
+]
+
+
+???
+
+- Schriftgrösse / -stil
+- Hintergrundfarbe
+
+---
+template: detail-lehrmittel
+
+.right-column[
+
+### Webbasiert bedeutet *kommentierbar*  
+
+
+<iframe style="position: absolute; height: 50%; border: none" src="https://arc2r.github.io/book/" name="book", width = "65%">Alternativtext</iframe>
+
+
+]
+
+
+???
+
+- Kommentar erstellen
 
 ---
 name: detail-virtuallab
@@ -163,14 +267,16 @@ template: detail-virtuallab
 
 ### RStudio im Browser  `r fa("internet-explorer")` 
 
+verkürzt die Distanz *lesen → selbst ausführen*
+
+
 - bestehende Infrastruktur (ICT ZHAW) 
 - Keine Installation von R / RStudio notwendig
 - ist Betriebssystem unabhängig
-- schneller Einstieg mit ZHAW Kürzel / Passwort
+- schneller Einstieg mit ZHAW login
 
-verkürzt die Distanz *lesen → selbst ausführen*
+<img style = "left:-120px;" src="rstudio-zhaw.gif" width="100%"/>
 
-<!-- Bild einfügen -->
 
 ]
 
@@ -183,13 +289,44 @@ template: detail-virtuallab
 ### R Package  `r fa("tools")` 
 
 - verkürzt die Distanz *lesen → selbst ausführen*
-- Auslieferung von 
-  - benötigten Geodatensätze
-  - benötigten Libraries
-  - R-Code zum selbst ausführen (als RMarkdown Template)
+- Auslieferung von: 
+
+.panelset[
+.panel[.panel-name[Geodaten]
+
+```{r, echo = FALSE}
+knitr::include_graphics("geodata.jpg")
+
+```
+]
+
+.panel[.panel-name[Libraries]
+
+```{r, echo = FALSE}
+knitr::include_graphics("rmarkdown-example-output.jpg")
+
+```
+]
+
+.panel[.panel-name[Code]
+
+```{r, echo = FALSE}
+knitr::include_graphics("rmarkdown-example-output.jpg")
+
+```
+]
 
 ]
 
+]
+
+???
+
+- es müssen keine R Geodaten runtergeladen weren
+- die notwendigen libraries werden automatisch installiert
+- der R-Code zum selbst ausprobieren wird als Template zur Verfügung gestellt
+
+---
 
 
 
