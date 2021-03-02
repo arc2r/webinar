@@ -1,0 +1,60 @@
+---
+title: "demo"
+author: "Nikos Bakogiannis"
+date: "2 3 2021"
+output: html_document
+---
+
+```{r arc2r}
+# libraries
+library(arc2r)
+library(sf)
+library(raster)
+library(mapview)
+library(tmap)
+library(ggplot2)
+```
+
+## Making maps
+
+```{r data}
+# Daten, die im arc2r Paket enthalten sind
+data("kantonsgebiet")
+```
+
+```{r package mapview}
+# eine "automatisiertere" Art der Erstellung einer interaktiven Karte
+mapview(kantonsgebiet)
+```
+
+```{r package tmap}
+# tmap auf interaktive Mode einstellen
+tmap_mode("view") 
+
+# Methode sehr ähnlich zu ggplot  
+tm_shape(kantonsgebiet) +
+  tm_polygons()
+```
+
+## Clip operation
+
+```{r data}
+# Datensatz, der die Mountainbike-Routen in der Schweiz abbildet
+data("mountainBikes_routes") 
+
+ggplot() + geom_sf(data = kantonsgebiet) +
+  geom_sf(data = mountainBikes_routes, color = "red4", alpha = 0.8) + coord_sf(datum = 2056)
+```
+
+
+```{r clip}
+library(dplyr)
+# 2000 m Puffer um die Mountainbike-Routen
+glarus <- filter(kantonsgebiet, NAME == "Glarus")
+
+routes_glarus <- st_intersection(mountainBikes_routes, glarus)
+
+ggplot() + geom_sf(data = glarus) + geom_sf(data = routes_glarus, color = "red4") + coord_sf(datum = 2056)
+```
+
+
