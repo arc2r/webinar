@@ -29,7 +29,7 @@ output:
 
 <img src="bako.jpg" alt="bako" class = "profil">
 </p>
---
+
 <p>Nikolaos Bakogiannis </p>
 </div>
 --
