@@ -36,25 +36,33 @@ tm_shape(kantonsgebiet) +
   tm_polygons()
 ```
 
-## Clip operation
+## Analysis operations
 
 ```{r data}
 # Datensatz, der die Mountainbike-Routen in der Schweiz abbildet
 data("mountainBikes_routes") 
-
-ggplot() + geom_sf(data = kantonsgebiet) +
-  geom_sf(data = mountainBikes_routes, color = "red4", alpha = 0.8) + coord_sf(datum = 2056)
 ```
 
 
-```{r clip}
+```{r clip and buffer}
 library(dplyr)
-# 2000 m Puffer um die Mountainbike-Routen
+
 glarus <- filter(kantonsgebiet, NAME == "Glarus")
 
+# Clipping der Mountainbike-Routen innerhalb der Ausdehnung des Kantons Glarus
 routes_glarus <- st_intersection(mountainBikes_routes, glarus)
 
-ggplot() + geom_sf(data = glarus) + geom_sf(data = routes_glarus, color = "red4") + coord_sf(datum = 2056)
+# 500 m Puffer um die Mountainbike-Routen
+routes_buffer <- st_buffer(routes_glarus,500)
+
+# Darstellen des Ergebnisses
+p <- ggplot() + geom_sf(data = glarus) + geom_sf(data = routes_glarus, color = "red4") +
+  geom_sf(data = routes_buffer, fill = "blue", alpha = 0.1) + coord_sf(datum = 2056) + 
+  ggtitle("Mountainbike-Routen im Kanton Glarus")
 ```
 
+```{r plot}
+p + theme(plot.title = element_text(size=10, face="italic"),
+          axis.text.x = element_text(size = 7), axis.text.y = element_text(size = 7))
+```
 
