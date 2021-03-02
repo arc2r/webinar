@@ -15,6 +15,34 @@ output:
       after_body: insert-logo.html
 ---
 
+## Wer wir sind
+
+<div>
+<p style = "float:left;">
+<img src="rata.gif" alt="rata" class = "profil">
+</p>
+<p> Nils Ratnaweera </p>
+</div>
+--
+<div>
+<p style = "float:left;">
+
+<img src="bako.jpg" alt="bako" class = "profil">
+</p>
+--
+<p>Nikolaos Bakogiannis </p>
+</div>
+--
+<div>
+<p style = "float:left;">
+
+<img src="laup.gif" alt="laup" class = "profil">
+</p>
+<p>Patrick Laube</p>
+
+</div>
+---
+
 layout: true
 class: inverse
 
@@ -33,7 +61,7 @@ class: inverse
 
 --
 
-- ein sicherer Umgang mit räumlichen Daten ist zentral
+- ein sicherer Umgang mit räumlichen Daten ist deshalb eine zentrale Fähigkeit
 
 --
 
@@ -44,7 +72,14 @@ class: inverse
 
 Seit Montag sind alle Geodaten des Bundes öffentlich
 ---
+```{r, echo = FALSE, out.width="65%", fig.cap = ""}
+knitr::include_graphics("opengeodata.jpg")
+```
 
+
+
+
+---
 
 
 ```{r, echo = FALSE, out.width="80%", fig.cap = "Screenshot aus einem Projekt in Zusammenarbeit mit dem FM"}

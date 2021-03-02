@@ -26,6 +26,13 @@
   z-index: 0;
 }
 
+.profil {
+  border-radius: 50%; 
+  width:160x; 
+  height:160px; 
+  left: 10em
+}
+
 .remark-slide-content{
     innerHTML += '<div class="logo"></div>';
 }
