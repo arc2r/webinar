@@ -14,33 +14,54 @@ output:
     includes:
       after_body: insert-logo.html
 ---
+class: inverse, middle
+
+
+```{r, echo = FALSE}
+library(fontawesome)
+xaringanExtra::use_panelset()
+xaringanExtra::use_fit_screen()
+```
+
+# Ablauf
+
+### `r fa("map-marked")` Teil 1: Ausgangslage
+
+### `r fa("gift")` Teil 2: Das Produkt 
+
+### `r fa("laptop-code")` Teil 3: Demo 
+
+### `r fa("binoculars")` Teil 4: Ausblick & Lessons learnt  
+
+
+???
+
+Zeitplan für heute, jeder Block ca. 10min
+
+---
+
+
+class: inverse
 
 ## Wer wir sind
 
-<div>
-<p style = "float:left;">
+<div style = "display: table;">
 <img src="rata.gif" alt="rata" class = "profil">
-</p>
-<p> Nils Ratnaweera </p>
+<p style = "float:right"> Nils Ratnaweera </p>
 </div>
---
-<div>
-<p style = "float:left;">
-
+<div style = "display: table;">
 <img src="bako.jpg" alt="bako" class = "profil">
-</p>
-
-<p>Nikolaos Bakogiannis </p>
+<p style = "float:right">Nikolaos Bakogiannis </p>
 </div>
---
-<div>
-<p style = "float:left;">
-
+<div style = "display: table;">
 <img src="laup.gif" alt="laup" class = "profil">
-</p>
-<p>Patrick Laube</p>
+<p style = "float:right">Patrick Laube</p>
 
 </div>
+
+???
+
+Forschungsgruppe Geoinformatik
 ---
 
 layout: true
@@ -49,6 +70,8 @@ class: inverse
 # Ausgangslage
 
 ---
+
+--
 
 .footnote[Franklin, Carl and Hane, Paula “An introduction to GIS: linking maps to databases” Database. 15 (2) April, 1992, 17-22.]
 
@@ -71,17 +94,24 @@ class: inverse
 ???
 
 Seit Montag sind alle Geodaten des Bundes öffentlich
+
+
 ---
 ```{r, echo = FALSE, out.width="65%", fig.cap = ""}
 knitr::include_graphics("opengeodata.jpg")
 ```
 
-
-
-
 ---
 
+```{r, echo = FALSE, out.width="80%", fig.cap = ""}
+knitr::include_graphics("gis_wieselundco.jpg")
+```
 
+???
+
+So erhalten Studierende zahlreiche Kurse rund um das ThemA GIS und Geodaten, vor allem, aber nicht nur UIs
+
+---
 ```{r, echo = FALSE, out.width="80%", fig.cap = "Screenshot aus einem Projekt in Zusammenarbeit mit dem FM"}
 knitr::include_graphics("geobim.jpg")
 ```
@@ -168,7 +198,9 @@ class: inverse
 
 --
 
-**Vor allem**: Das Beherrschen einer Programmiersprache wird im Zeitalter der Digitalisierung immer wichtiger
+**Vor allem**: R macht spass!
+
+
 
 
 ---
@@ -178,6 +210,10 @@ class: inverse, middle, center
 ```{r, echo = FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("jobs.jpg")
 ```
+
+???
+
+Das Beherrschen einer Programmiersprache wird im Zeitalter der Digitalisierung immer wichtiger
 
 
 ---
@@ -228,6 +264,12 @@ knitr::include_graphics("books.jpg")
 oder eben Geodaten analysieren und visualisieren (Quelle: [nils.ratnaweera.net](https://nils.ratnaweera.net/2020/06/06/using-rayshader-to-visualize-lake-zurich/))
 
 ![](https://nils.ratnaweera.net/img/2020_06_04_rayshader/steps_01-10.gif)
+
+???
+
+Warnen, dass hier ein GIF läuft
+
+
 ---
 
 layout: false
@@ -238,9 +280,19 @@ Einige wollen von ArcGIS zu `R` wechseln...
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Y’all ArcMap is making me soo angry! Thinking of transitioning to do GIS solely in R. Any helpful hints out there? <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/rspatial?src=hash&amp;ref_src=twsrc%5Etfw">#rspatial</a> <a href="https://twitter.com/hashtag/GIS?src=hash&amp;ref_src=twsrc%5Etfw">#GIS</a> <a href="https://twitter.com/hashtag/ArcGIS?src=hash&amp;ref_src=twsrc%5Etfw">#ArcGIS</a> <a href="https://twitter.com/hashtag/phdchat?src=hash&amp;ref_src=twsrc%5Etfw">#phdchat</a> <a href="https://twitter.com/hashtag/ecology?src=hash&amp;ref_src=twsrc%5Etfw">#ecology</a> <a href="https://twitter.com/hashtag/LandscapeEcology?src=hash&amp;ref_src=twsrc%5Etfw">#LandscapeEcology</a></p>&mdash; Kim Serno (@KimSerno) <a href="https://twitter.com/KimSerno/status/1191809034044743680?ref_src=twsrc%5Etfw">November 5, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
+???
+
+das Lernen von Programmiersprachen ist zwar schwierig, aber machbar. Und da kommt unser Projekt ins Spiel
+
 ---
 class: inverse, middle
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Goodbye <a href="https://twitter.com/hashtag/arcgis?src=hash&amp;ref_src=twsrc%5Etfw">#arcgis</a> you&#39;ve replaced by <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> forever. A milestone worth celebrating!!! <a href="https://t.co/FJ85eOIMPS">pic.twitter.com/FJ85eOIMPS</a></p>&mdash; Nicole T.M. Hill (@NicoleTMHill) <a href="https://twitter.com/NicoleTMHill/status/1218735367467044864?ref_src=twsrc%5Etfw">January 19, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
+---
+
+class: inverse, middle
+
+
+## Ende des ersten Blockes... Fragen?
 

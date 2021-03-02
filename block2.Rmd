@@ -14,10 +14,9 @@ output:
     includes:
       after_body: insert-logo.html
 ---
+layout: false
+class: inverse
 
-class: middle, center
-
-# Block 2: Was haben wir entwickelt?
 
 ```{r, echo = FALSE}
 library(fontawesome)
@@ -25,17 +24,12 @@ xaringanExtra::use_panelset()
 ```
 
 
-
----
-layout: false
-class: inverse
-
 # Was haben wir entwickelt?
 
 
 --
 
-Eine *Lernumgebung*, um den Wechsel `R` → ArcGIS zu erleichtern
+Eine *Lernumgebung*, um den Wechsel ArcGIS →  `R` zu erleichtern
 
 --
 
@@ -50,11 +44,16 @@ Aufgeteilt in zwei Komponenten (Arbeitspakete `r fa("box-open")`):
 ## .center[`r fa("box-open")` Virtual Lab im Browser]
 --
 
-  - ZHAW-RStudio (rstudio.zhaw.ch)
+
+---
+class: inverse, middle, center
+
+
+## `r fa("box-open")` Webbasiertes Lehrmittel
+
 --
-  
-  - R Package
-  
+
+[`r fa("link")` arc2r.github.com/book](https://arc2r.github.io/book/)
 
 
 ---
@@ -71,107 +70,7 @@ Webbasiertes Lehrmittel
 ]
 
 ---
-template: detail-lehrmittel
 
-
-
-.right-column[
-
-### RMarkdown  `r fa("markdown")` 
-
-- Text und R-Code existieren im *gleichen* Dokument
-- Kein Copy & Paste von Code bzw. dessen Outputs 
-
-]
-
-
-???
-
-Outputs wie zum Beispiel Grafiken, Messages, Karten
-
----
-layout: false
-class: inverse
-
-.panelset[
-.panel[.panel-name[RMarkdown]
-
-```{r, echo = FALSE}
-knitr::include_graphics("rmarkdown-example.jpg")
-
-```
-]
-
-.panel[.panel-name[Output]
-
-```{r, echo = FALSE}
-knitr::include_graphics("rmarkdown-example-output.jpg")
-
-```
-]
-]
-
----
-template: detail-lehrmittel
-
-.right-column[
-
-### Source Code auf Github  `r fa("github-square")` 
-
-- ermöglicht ein *hohes Grad* an Kollaboration 
-
-```{r, echo = FALSE}
-knitr::include_graphics("Git-Network-dark.jpg")
-
-```
-
-
-]
-
-
----
-
-template: detail-lehrmittel
-
-.right-column[
-
-### Source Code auf Github  `r fa("github-square")` 
-
-- Ressource soll durch die Community weiterentwickelt werden (*Pull requests*)
-
-```{r, echo = FALSE}
-knitr::include_graphics("gh-pullrequests-dark.jpg")
-
-```
-
-
-]
-
-
----
-
-template: detail-lehrmittel
-
-.right-column[
-
-### Source Code auf Github  `r fa("github-square")` 
-
-- erhöht die Sichtbarkeit
-
-```{r, echo = FALSE}
-knitr::include_graphics("gh-stars-dark.jpg")
-
-```
-
-
-]
-
-???
-
-  github ist das "Facebook" von Opensource projekten und offenen lehrmitteln
-  
-
----
 template: detail-lehrmittel
 
 .right-column[
@@ -247,6 +146,14 @@ template: detail-lehrmittel
 - Kommentar erstellen
 
 ---
+class: inverse, middle, center
+
+
+## `r fa("box-open")` Virtual Lab im Browser
+
+[rstudio-ide.zhaw.ch](https://rstudio-ide.zhaw.ch/)
+
+---
 name: detail-virtuallab
 class: inverse 
 
@@ -256,7 +163,26 @@ class: inverse
 
 Virtual Lab im Browser
 
+
+
 ]
+
+
+---
+template: detail-virtuallab
+
+.right-column[
+
+### Besteht aus:
+
+- RStudio im Browser
+- RPackage
+]
+
+???
+
+RStudio ist eine bestehende ZHAW Infrastruktur, die wir im Rahmen der Lehre ins Leben gerufen haben und vom ICT der ZHAW getragen wird. Wurde *nicht* im Rahmen dieses Projektes entwickelt
+
 
 
 ---
@@ -265,71 +191,119 @@ template: detail-virtuallab
 
 .right-column[
 
-### RStudio im Browser  `r fa("internet-explorer")` 
+### RStudio im Browser
 
 verkürzt die Distanz *lesen → selbst ausführen*
 
-
-- bestehende Infrastruktur (ICT ZHAW) 
-- Keine Installation von R / RStudio notwendig
-- ist Betriebssystem unabhängig
-- schneller Einstieg mit ZHAW login
 
 <img style = "left:-120px;" src="rstudio-zhaw.gif" width="100%"/>
 
 
 ]
 
+???
+- Keine Installation von R / RStudio notwendig
+- ist Betriebssystem unabhängig
+- schneller Einstieg mit ZHAW login
+
 
 ---
 template: detail-virtuallab
 
 .right-column[
 
-### R Package  `r fa("tools")`
+### R Package `r fa("tools")`
 
 - verkürzt die Distanz *lesen → selbst ausführen*
-- Auslieferung von *Geodaten*, *Libraries* und *Code*
+- Auslieferung von 
+  - Geodaten
+  - Metadaten
+  - Libraries
+  - R-Code
 
-.panelset[
-.panel[.panel-name[Geodaten]
 
-```{r, echo = FALSE}
+]
+
+???
+
+
+---
+
+template: detail-virtuallab
+
+.right-column[
+
+### R Package `r fa("tools")`
+
+Einfache Auslieferung von *Geodaten* 
+
+```{r, echo = FALSE, out.width="90%"}
 knitr::include_graphics("geodata.jpg")
-
 ```
-]
-
-.panel[.panel-name[Libraries]
-
-installiert alle benötigten Libraries automatisch
-
-```{r, eval = FALSE}
-remotes::install_github("arc2r/arc2r", dependencies = TRUE)
-```
-]
-
-.panel[.panel-name[Code]
-
-```{r, echo = FALSE}
-knitr::include_graphics("choose_chapter.jpg")
-
-```
-]
-
-]
 
 ]
 
 ???
 
 - es müssen keine R Geodaten runtergeladen weren
-- die notwendigen libraries werden automatisch installiert
-- der R-Code zum selbst ausprobieren wird als Template zur Verfügung gestellt
+
+---
+template: detail-virtuallab
+
+.right-column[
+
+### R Package `r fa("tools")`
+
+Einfache Auslieferung von *Metadaten* 
+
+[`r fa("link")` arc2r.github.com/arc2r](https://arc2r.github.io/arc2r/)
+
+
+]
+
+???
+
+- Wenn man ein R-Package entwickelt und dabei github nutzt, ist eine solche website fast schon "gratis" mit dabei
 
 ---
 
+template: detail-virtuallab
 
+.right-column[
 
+### R Package `r fa("tools")`
 
+Einfache Auslieferung von *Libraries* 
 
+```{r, eval = FALSE}
+install.packages("remotes")
+library(remotes)
+
+# installiert alle benötigten Libraries:
+install_github("arc2r/arc2r", dependencies = TRUE)
+```
+]
+
+???
+
+- die notwendigen libraries werden automatisch installiert
+
+---
+template: detail-virtuallab
+
+.right-column[
+
+### R Package `r fa("tools")`
+
+Einfache Auslieferung von *R Code* 
+
+```{r, echo = FALSE}
+knitr::include_graphics("choose_chapter.jpg")
+```
+]
+
+???
+
+- kurz demonstrieren?
+
+---

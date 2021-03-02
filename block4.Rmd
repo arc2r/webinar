@@ -14,63 +14,105 @@ output:
     includes:
       after_body: insert-logo.html
 ---
-
-## Grundsätzliche Unterschiede zwischen ArcGIS und `R`
-
-
----
-
-Grundbaustein in ArcMap ist die *Map*. 
-
+class: inverse
 
 ```{r, echo = FALSE}
-knitr::include_graphics("geobim.jpg")
+library(fontawesome)
+xaringanExtra::use_panelset()
 ```
 
+## Was haben wir gelernt?
 
-???
+- Konzeptionelle Unterschiede zwischen ArcGIS und `R`
 
-Sie beansprucht am meisten Platz im Interface  
+
+- Verwendung von R-Markdown, `bookdown`
+- Webbasiert ist die Zukunft!
+- Schreiben von R-Packages (`pkgdown`)
+- Kollaboration über Github
+- Verwendung von Github-Actions
 
 
 
 ---
+layout: true
+class: inverse
 
+## Konzeptionelle Unterschiede zwischen ArcGIS und `R`
+
+
+---
+
+.pull-left[
+Grundbaustein in ArcMap ist die *Map*. 
+```{r, echo = FALSE}
+knitr::include_graphics("gis_wieselundco.jpg")
+```
+
+]
+
+.pull-right[
 Grundbaustein in `R` ist das *Script*
-
 
 ```{r, echo = FALSE}
 knitr::include_graphics("rstudio.jpg")
 ```
 
+]
+
+
+
+
+
 ???
 
-Es beansprucht am meisten Platz im Interface  
+Sie beansprucht am meisten Platz im Interface  
+Das macht ArcGIS leichter zugänglich
 
 
 
 ---
 
 
-# Unterschiede zwischen ArcGIS und `R`
+.pull-left[
+Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI)
+]
 
-Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI). Auf CRAN werden zurzeit >17'000 Packages angeboten, von fast so vielen Entwicklern.
-
-<!-- es gibt immer N+1 wege ein Problem in R zu lösen -->
---
-
-
-Während ESRI für viele Funktionen eigene Namen entwickelt hat, werden in `R` die branchenüblichen Standards verwendet. <!-- Beispiel Clip, Select,  -->  
-
---
-
-ArcGIS Versucht grundätzlich, ein Tool für jedes Problem zu entwickeln. In den meisten `R` Packages versucht man ein minimales Set an Funktionen anzubieten, die auf die eignen bedürfnissen angepasst werden kann. 
+.pull-right[
+In `R` gibt es >17'000 Packages von fast so vielen Entwicklern.
+]
 
 
-<!-- Bild einfügen vom Netzwerkdiagramm -->
+
+???
+es gibt immer N+1 wege ein Problem in R zu lösen 
 
 ---
 
+.pull-left[
+ESRI entwickelt viele Eigennamen  <!-- Beispiel Clip, Select,  -->  
+]
+
+.pull-right[
+In `R` die branchenüblichen Standards verwendet
+]
+
+
+---
+
+.pull-left[
+ArcGIS: Für jedes Problem ein Tool
+
+[`r fa("link")` arc2r.github.com/book](https://arc2r.github.io/book/20_Geoprocessing_Tools.html)
+
+
+]
+
+.pull-right[
+`R`: Minimales Set an Funktionen die auf die eigenen bedürfnissen angepasst werden können 
+]
+
+---
 
 layout: true
 class: inverse
@@ -80,6 +122,8 @@ class: inverse
 
 ---
 
+
+.pull-left[
 - Georeferenzieren
 
 ```{r, echo = FALSE}
@@ -87,8 +131,10 @@ knitr::include_graphics("https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg")
 ```
 
 
----
 
+]
+
+.pull-right[
 - Karten digitalisieren
 
 
@@ -96,10 +142,94 @@ knitr::include_graphics("https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg")
 knitr::include_graphics("https://desktop.arcgis.com/de/arcmap/10.3/manage-data/creating-new-features/GUID-D6396C58-0375-402D-B3C2-441E76A18AED-web.png")
 ```
 
+]
+
+---
+layout: false
+class: invert
+
+## Verwendung von R-Markdown, `bookdown`
 
 
-<!-- Quck and dirty map? -->
+- Text und R-Code existieren im *gleichen* Dokument
+- Kein Copy & Paste von Code bzw. dessen Outputs 
 
+
+.panelset[
+.panel[.panel-name[RMarkdown]
+
+```{r, echo = FALSE}
+knitr::include_graphics("rmarkdown-example.jpg")
+
+```
+]
+
+.panel[.panel-name[Output]
+
+```{r, echo = FALSE}
+knitr::include_graphics("rmarkdown-example-output.jpg")
+
+```
+]
+]
+
+???
+
+Outputs wie zum Beispiel Grafiken, Messages, Karten
+
+---
+layout: false
+class: inverse
+
+
+
+---
+class: inverse 
+
+
+## Webbasiert ist die Zukunft!
+
+---
+class: inverse 
+layout: true
+
+
+
+### Source Code auf Github  `r fa("github-square")` 
+
+
+---
+
+- ermöglicht ein *hohes Grad* an Kollaboration 
+
+```{r, echo = FALSE}
+knitr::include_graphics("Git-Network-dark.jpg")
+
+```
+
+---
+
+- Ressource soll durch die Community weiterentwickelt werden (*Pull requests*)
+
+```{r, echo = FALSE}
+knitr::include_graphics("gh-pullrequests-dark.jpg")
+
+```
+
+---
+
+- erhöht die Sichtbarkeit
+
+```{r, echo = FALSE}
+knitr::include_graphics("gh-stars-dark.jpg")
+
+```
+
+
+???
+
+github ist das "Facebook" von Opensource projekten und offenen lehrmitteln
+  
 
 
 

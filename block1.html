@@ -4,10 +4,13 @@
     <title>All Things R spatial: Räumliche Daten in R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Nils Ratnaweera (ZHAW)" />
-    <meta name="date" content="2021-03-02" />
+    <meta name="date" content="2021-03-03" />
     <script src="libs/header-attrs-2.6/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.5.9000/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.5.9000/panelset.js"></script>
+    <script src="libs/xaringanExtra_fit-screen-0.2.5.9000/fit-screen.js"></script>
     <link rel="stylesheet" href="mystyle.css" type="text/css" />
   </head>
   <body>
@@ -17,37 +20,54 @@ class: center, middle, inverse, title-slide
 # All Things <code>R</code> spatial: Räumliche Daten in <code>R</code>
 ## Teil 1: Die Ausgangslage
 ### Nils Ratnaweera (ZHAW)
-### 2021-03-02
+### 2021-03-03
+
+---
+
+class: inverse, middle
+
+
+
+
+# Ablauf
+
+### &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M288 0c-69.59 0-126 56.41-126 126 0 56.26 82.35 158.8 113.9 196.02 6.39 7.54 17.82 7.54 24.2 0C331.65 284.8 414 182.26 414 126 414 56.41 357.59 0 288 0zM20.12 215.95A32.006 32.006 0 0 0 0 245.66v250.32c0 11.32 11.43 19.06 21.94 14.86L160 448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-59.49-76.72v182l192 64V266c-18.92 27.09-39.82 53.52-59.49 76.72-9.13 10.77-22.44 16.95-36.51 16.95zm266.06-198.51L416 224v288l139.88-55.95A31.996 31.996 0 0 0 576 426.34V176.02c0-11.32-11.43-19.06-21.94-14.86z"/&gt;&lt;/svg&gt; Teil 1: Ausgangslage
+
+### &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M32 448c0 17.7 14.3 32 32 32h160V320H32v128zm256 32h160c17.7 0 32-14.3 32-32V320H288v160zm192-320h-42.1c6.2-12.1 10.1-25.5 10.1-40 0-48.5-39.5-88-88-88-41.6 0-68.5 21.3-103 68.3-34.5-47-61.4-68.3-103-68.3-48.5 0-88 39.5-88 88 0 14.5 3.8 27.9 10.1 40H32c-17.7 0-32 14.3-32 32v80c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16v-80c0-17.7-14.3-32-32-32zm-326.1 0c-22.1 0-40-17.9-40-40s17.9-40 40-40c19.9 0 34.6 3.3 86.1 80h-86.1zm206.1 0h-86.1c51.4-76.5 65.7-80 86.1-80 22.1 0 40 17.9 40 40s-17.9 40-40 40z"/&gt;&lt;/svg&gt; Teil 2: Das Produkt 
+
+### &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"/&gt;&lt;/svg&gt; Teil 3: Demo 
+
+### &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M416 48c0-8.84-7.16-16-16-16h-64c-8.84 0-16 7.16-16 16v48h96V48zM63.91 159.99C61.4 253.84 3.46 274.22 0 404v44c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32V288h32V128H95.84c-17.63 0-31.45 14.37-31.93 31.99zm384.18 0c-.48-17.62-14.3-31.99-31.93-31.99H320v160h32v160c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-44c-3.46-129.78-61.4-150.16-63.91-244.01zM176 32h-64c-8.84 0-16 7.16-16 16v48h96V48c0-8.84-7.16-16-16-16zm48 256h64V128h-64v160z"/&gt;&lt;/svg&gt; Teil 4: Ausblick &amp; Lessons learnt  
+
+
+???
+
+Zeitplan für heute, jeder Block ca. 10min
 
 ---
 
 
+class: inverse
+
 ## Wer wir sind
 
-&lt;div&gt;
-&lt;p style = "float:left;"&gt;
+&lt;div style = "display: table;"&gt;
 &lt;img src="rata.gif" alt="rata" class = "profil"&gt;
-&lt;/p&gt;
-&lt;p&gt; Nils Ratnaweera &lt;/p&gt;
+&lt;p style = "float:right"&gt; Nils Ratnaweera &lt;/p&gt;
 &lt;/div&gt;
---
-&lt;div&gt;
-&lt;p style = "float:left;"&gt;
-
+&lt;div style = "display: table;"&gt;
 &lt;img src="bako.jpg" alt="bako" class = "profil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Nikolaos Bakogiannis &lt;/p&gt;
+&lt;p style = "float:right"&gt;Nikolaos Bakogiannis &lt;/p&gt;
 &lt;/div&gt;
---
-&lt;div&gt;
-&lt;p style = "float:left;"&gt;
-
+&lt;div style = "display: table;"&gt;
 &lt;img src="laup.gif" alt="laup" class = "profil"&gt;
-&lt;/p&gt;
-&lt;p&gt;Patrick Laube&lt;/p&gt;
+&lt;p style = "float:right"&gt;Patrick Laube&lt;/p&gt;
 
 &lt;/div&gt;
+
+???
+
+Forschungsgruppe Geoinformatik
 ---
 
 layout: true
@@ -56,6 +76,8 @@ class: inverse
 # Ausgangslage
 
 ---
+
+--
 
 .footnote[Franklin, Carl and Hane, Paula “An introduction to GIS: linking maps to databases” Database. 15 (2) April, 1992, 17-22.]
 
@@ -78,15 +100,20 @@ class: inverse
 ???
 
 Seit Montag sind alle Geodaten des Bundes öffentlich
+
+
 ---
 &lt;img src="opengeodata.jpg" width="65%" /&gt;
 
-
-
-
 ---
 
+&lt;img src="gis_wieselundco.jpg" width="80%" /&gt;
 
+???
+
+So erhalten Studierende zahlreiche Kurse rund um das ThemA GIS und Geodaten, vor allem, aber nicht nur UIs
+
+---
 &lt;div class="figure"&gt;
 &lt;img src="geobim.jpg" alt="Screenshot aus einem Projekt in Zusammenarbeit mit dem FM" width="80%" /&gt;
 &lt;p class="caption"&gt;Screenshot aus einem Projekt in Zusammenarbeit mit dem FM&lt;/p&gt;
@@ -172,7 +199,9 @@ class: inverse
 
 --
 
-**Vor allem**: Das Beherrschen einer Programmiersprache wird im Zeitalter der Digitalisierung immer wichtiger
+**Vor allem**: R macht spass!
+
+
 
 
 ---
@@ -180,6 +209,10 @@ layout: false
 class: inverse, middle, center
 
 &lt;img src="jobs.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+
+???
+
+Das Beherrschen einer Programmiersprache wird im Zeitalter der Digitalisierung immer wichtiger
 
 
 ---
@@ -225,6 +258,12 @@ Bücher schreiben (Quelle: [songs.ratnaweera.net](https://songs.ratnaweera.net/)
 oder eben Geodaten analysieren und visualisieren (Quelle: [nils.ratnaweera.net](https://nils.ratnaweera.net/2020/06/06/using-rayshader-to-visualize-lake-zurich/))
 
 ![](https://nils.ratnaweera.net/img/2020_06_04_rayshader/steps_01-10.gif)
+
+???
+
+Warnen, dass hier ein GIF läuft
+
+
 ---
 
 layout: false
@@ -235,11 +274,21 @@ Einige wollen von ArcGIS zu `R` wechseln...
 
 &lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Y’all ArcMap is making me soo angry! Thinking of transitioning to do GIS solely in R. Any helpful hints out there? &lt;a href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/rspatial?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rspatial&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/GIS?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#GIS&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/ArcGIS?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#ArcGIS&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/phdchat?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#phdchat&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/ecology?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#ecology&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/LandscapeEcology?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#LandscapeEcology&lt;/a&gt;&lt;/p&gt;&amp;mdash; Kim Serno (@KimSerno) &lt;a href="https://twitter.com/KimSerno/status/1191809034044743680?ref_src=twsrc%5Etfw"&gt;November 5, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
 
+???
+
+das Lernen von Programmiersprachen ist zwar schwierig, aber machbar. Und da kommt unser Projekt ins Spiel
+
 ---
 class: inverse, middle
 
 &lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Goodbye &lt;a href="https://twitter.com/hashtag/arcgis?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#arcgis&lt;/a&gt; you&amp;#39;ve replaced by &lt;a href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; forever. A milestone worth celebrating!!! &lt;a href="https://t.co/FJ85eOIMPS"&gt;pic.twitter.com/FJ85eOIMPS&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nicole T.M. Hill (@NicoleTMHill) &lt;a href="https://twitter.com/NicoleTMHill/status/1218735367467044864?ref_src=twsrc%5Etfw"&gt;January 19, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
 
+---
+
+class: inverse, middle
+
+
+## Ende des ersten Blockes... Fragen?
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
