@@ -14,18 +14,7 @@ output:
     includes:
       after_body: insert-logo.html
 ---
-template: blocksep
-layout: true
-name: blocksep
-class: center, middle
 
----
-
-name: blocksep
-
-# Block 1: Ausgangslage
-
----
 layout: true
 class: inverse
 
@@ -33,12 +22,14 @@ class: inverse
 
 ---
 
+.footnote[Franklin, Carl and Hane, Paula “An introduction to GIS: linking maps to databases” Database. 15 (2) April, 1992, 17-22.]
 
-- Beinahe *alles* hat eine räumliche Dimension <!-- Quelle -->
+
+- 80% aller Daten haben eine räumliche Komponente (Franklin & Hane, 1992)
 
 --
 
-- dies gilt insbesondere für den Bereich der Life Sciences
+- dies gilt *insbesondere* für den Bereich der Life Sciences
 
 --
 
@@ -46,11 +37,19 @@ class: inverse
 
 --
 
+
+
+
+???
+
+Seit Montag sind alle Geodaten des Bundes öffentlich
+---
+
+
+
 ```{r, echo = FALSE, out.width="80%", fig.cap = "Screenshot aus einem Projekt in Zusammenarbeit mit dem FM"}
 knitr::include_graphics("geobim.jpg")
 ```
-
-???
 
 
 
