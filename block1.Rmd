@@ -78,7 +78,7 @@ knitr::include_graphics("geobim.jpg")
 
 --
 
-  - ... ist Proprietär
+  - ... ist proprietär
   
 --
 
