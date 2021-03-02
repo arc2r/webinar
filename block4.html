@@ -15,198 +15,91 @@
 class: center, middle, inverse, title-slide
 
 # All Things <code>R</code> spatial: Räumliche Daten in <code>R</code>
-## Teil 1: Die Ausgangslage
+## Teil 4: Lessons Learnt und Auslick
 ### Nils Ratnaweera (ZHAW)
 ### 2021-03-02
 
 ---
 
-template: blocksep
-layout: true
-name: blocksep
-class: center, middle
+
+## Grundsätzliche Unterschiede zwischen ArcGIS und `R`
+
 
 ---
 
-name: blocksep
-
-# Block 1: Ausgangslage
-
----
-layout: true
-class: inverse
-
-# Ausgangslage
-
----
+Grundbaustein in ArcMap ist die *Map*. 
 
 
-- Beinahe *alles* hat eine räumliche Dimension &lt;!-- Quelle --&gt;
+&lt;img src="geobim.jpg" width="2816" /&gt;
 
---
-
-- dies gilt insbesondere für den Bereich der Life Sciences
-
---
-
-- ein sicherer Umgang mit räumlichen Daten ist zentral
-
---
-
-&lt;div class="figure"&gt;
-&lt;img src="geobim.jpg" alt="Screenshot aus einem Projekt in Zusammenarbeit mit dem FM" width="80%" /&gt;
-&lt;p class="caption"&gt;Screenshot aus einem Projekt in Zusammenarbeit mit dem FM&lt;/p&gt;
-&lt;/div&gt;
 
 ???
 
+Sie beansprucht am meisten Platz im Interface  
+
+
+
+---
+
+Grundbaustein in `R` ist das *Script*
+
+
+&lt;img src="rstudio.jpg" width="2300" /&gt;
+
+???
+
+Es beansprucht am meisten Platz im Interface  
 
 
 
 ---
 
 
-- GUI-Software bieten einen einfachen Einstieg in den Umgang mit Geodaten
+# Unterschiede zwischen ArcGIS und `R`
+
+Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI). Auf CRAN werden zurzeit &gt;17'000 Packages angeboten, von fast so vielen Entwicklern.
+
+&lt;!-- es gibt immer N+1 wege ein Problem in R zu lösen --&gt;
+--
+
+
+Während ESRI für viele Funktionen eigene Namen entwickelt hat, werden in `R` die branchenüblichen Standards verwendet. &lt;!-- Beispiel Clip, Select,  --&gt;  
 
 --
 
-- Am Dep. wird deshalb hauptsächlich ArcGIS Unterrichtet
+ArcGIS Versucht grundätzlich, ein Tool für jedes Problem zu entwickeln. In den meisten `R` Packages versucht man ein minimales Set an Funktionen anzubieten, die auf die eignen bedürfnissen angepasst werden kann. 
 
---
 
-- Aber: ArcGIS...
-
---
-  
-  - ... ist nicht Skalierbar (Stichwort HPC)
-
---
-  
-  - ... ist kaum Reproduzierbar
-
---
-
-  - ... ist Proprietär
-  
---
-
-  - ... ist kostenpflichtig
+&lt;!-- Bild einfügen vom Netzwerkdiagramm --&gt;
 
 ---
 
-layout: false
-class: inverse
-
-
-
-&lt;img src="rrescue.gif" width="60%" style="display: block; margin: auto;" /&gt;
-
-
-
-
----
 
 layout: true
 class: inverse
 
-# Die Programmiersprache `R`
-
----
-
---
-
-... hat sich in den letzten Jahren zu einem vollumfänglichen GIS entwickelt
-
---
-
-... nutzen Studierende und Mitarbeiter bereits für statistische Analysen
-
---
-
-... ist Skalierbar (läuft auf unserem HPC)
-  
---
-
-  
-... ermöglicht reproduzierbare Resultate
-
---
-
-... ist OpenSource
-  
---
-
-... ist kostenlos
-
---
-
-**Vor allem**: Das Beherrschen einer Programmiersprache wird im Zeitalter der Digitalisierung immer wichtiger
-
-
----
-layout: false
-class: inverse, middle, center
-
-&lt;img src="jobs.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+## Wo brilliert ArcGIS gegenüber `R`?
 
 
 ---
 
-layout: true
-class: inverse
+- Georeferenzieren
 
-# `R` kann sehr vielseitig eingesetzt werden
-
----
-
-Blogs schreiben ([nils.ratnaweera.net](https://nils.ratnaweera.net/))
-
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="website.jpg" alt="nils.ratnaweera.net" width="80%" /&gt;
-&lt;p class="caption"&gt;nils.ratnaweera.net&lt;/p&gt;
-&lt;/div&gt;
-
----
-
-Wohnungen suchen (Quelle: [rpubs.com/rata](https://rpubs.com/rata/isochrone_oev))
-
-&lt;img src="wohnunsgsuche.jpg" width="80%" style="display: block; margin: auto;" /&gt;
-
-Isochronen für ÖV Erreichbarkeit 
----
-
-Ferienausgaben analysieren
-
-&lt;img src="ferienausgaben.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+![](https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg)&lt;!-- --&gt;
 
 
 ---
 
-
-Bücher schreiben (Quelle: [songs.ratnaweera.net](https://songs.ratnaweera.net/))
-
-&lt;img src="books.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+- Karten digitalisieren
 
 
----
-
-oder eben Geodaten analysieren und visualisieren (Quelle: [nils.ratnaweera.net](https://nils.ratnaweera.net/2020/06/06/using-rayshader-to-visualize-lake-zurich/))
-
-![](https://nils.ratnaweera.net/img/2020_06_04_rayshader/steps_01-10.gif)
----
-
-layout: false
-class: inverse, middle
-
-Einige wollen von ArcGIS zu `R` wechseln...
+![](https://desktop.arcgis.com/de/arcmap/10.3/manage-data/creating-new-features/GUID-D6396C58-0375-402D-B3C2-441E76A18AED-web.png)&lt;!-- --&gt;
 
 
-&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Y’all ArcMap is making me soo angry! Thinking of transitioning to do GIS solely in R. Any helpful hints out there? &lt;a href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/rspatial?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rspatial&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/GIS?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#GIS&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/ArcGIS?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#ArcGIS&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/phdchat?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#phdchat&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/ecology?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#ecology&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/LandscapeEcology?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#LandscapeEcology&lt;/a&gt;&lt;/p&gt;&amp;mdash; Kim Serno (@KimSerno) &lt;a href="https://twitter.com/KimSerno/status/1191809034044743680?ref_src=twsrc%5Etfw"&gt;November 5, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
 
----
-class: inverse, middle
+&lt;!-- Quck and dirty map? --&gt;
 
-&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Goodbye &lt;a href="https://twitter.com/hashtag/arcgis?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#arcgis&lt;/a&gt; you&amp;#39;ve replaced by &lt;a href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; forever. A milestone worth celebrating!!! &lt;a href="https://t.co/FJ85eOIMPS"&gt;pic.twitter.com/FJ85eOIMPS&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nicole T.M. Hill (@NicoleTMHill) &lt;a href="https://twitter.com/NicoleTMHill/status/1218735367467044864?ref_src=twsrc%5Etfw"&gt;January 19, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
+
 
 
     </textarea>

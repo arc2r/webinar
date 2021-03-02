@@ -9,14 +9,11 @@ output:
 
 Slides Übersicht:
 
-- [Block 1](block1.html): Vorstellung des Projekts
-- [Block 2](block2.html): Was haben wir entwickelt?
-- [Block 3](block3.html): Erste Schritte mit *arc2r* (alle arbeiten mit RStudio)
-- Block 4: Ein Schritt zurück: Vorstellung der Tools und lessons learnt
-  - Schreiben von Büchern mit Bookdown
-  - Schreiben von R-Packages
-  - Nutzung von github actions
-  - Lessons learnt bezüglich GIS/R?
+- [Block 1](block1.html): (edit [block1.Rmd](block1.Rmd)) Vorstellung des Projekts
+- [Block 2](block2.html): (edit [block2.Rmd](block2.Rmd)) Was haben wir entwickelt?
+- [Block 3](block3.html): (edit [block3.Rmd](block3.Rmd)) Erste Schritte mit *arc2r* (alle arbeiten mit RStudio)
+- [Block 4](block4.html): (edit [block4.Rmd](block4.Rmd)) Ein Schritt zurück: Vorstellung der Tools und lessons learnt
+
 
 
 

@@ -1,4 +1,19 @@
-
+---
+title: "All Things `R` spatial: Räumliche Daten in `R`"
+subtitle: "Teil 4: Lessons Learnt und Ausblick"
+author: "Nils Ratnaweera (ZHAW)"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: [default, default-fonts, mystyle.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    includes:
+      after_body: insert-logo.html
+---
 
 ## Grundsätzliche Unterschiede zwischen ArcGIS und `R`
 
@@ -35,24 +50,9 @@ Es beansprucht am meisten Platz im Interface
 
 
 ---
-title: "All Things `R` spatial: Räumliche Daten in `R`"
-subtitle: "Teil 3: Erste Schritte"
-author: "Nils Ratnaweera (ZHAW)"
-date: "`r Sys.Date()`"
-output:
-  xaringan::moon_reader:
-    css: [default, default-fonts, mystyle.css]
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-    includes:
-      after_body: insert-logo.html
----
 
----
 
+# Unterschiede zwischen ArcGIS und `R`
 
 Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI). Auf CRAN werden zurzeit >17'000 Packages angeboten, von fast so vielen Entwicklern.
 
