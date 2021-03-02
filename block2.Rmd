@@ -1,150 +1,197 @@
 ---
 title: "All Things `R` spatial: Räumliche Daten in `R`"
-subtitle: "🖈 <br/> Teil 2 (von 4)"
-author: "Nils Ratnaweera"
-institute: "ZHAW IUNR "
+subtitle: "Teil 2 (von 4)"
+author: "Nils Ratnaweera (ZHAW)"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
+    css: [default, default-fonts, mystyle.css]
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+    includes:
+      after_body: insert-logo.html
 ---
 
 class: middle, center
 
 # Block 2: Was haben wir entwickelt?
 
+```{r, echo = FALSE}
+library(fontawesome)
+xaringanExtra::use_panelset()
+```
+
+
 
 ---
-layout: true
+layout: false
+class: inverse
+
 # Was haben wir entwickelt?
 
 
----
-class: inverse
-
-Eine Lernumgebung, um den Wechsel `R` → ArcGIS zu erleichtern
 --
 
-```{r, echo = FALSE, fig.align='center', out.width="50%"}
+Eine *Lernumgebung*, um den Wechsel `R` → ArcGIS zu erleichtern
 
-knitr::include_graphics("logo.svg")
+Aufgeteilt in zwei Komponenten (Arbeitspakete):
+
+1. `r fa("box-open")` Webbasiertes Lehrmittel
+2. `r fa("box-open")` Virtual Lab im Browser
+--
+
+  - ZHAW-RStudio (rstudio.zhaw.ch)
+--
+  
+  - R Package
+  
+
+
+---
+name: detail-lehrmittel
+class: inverse 
+
+
+# `r fa("box-open")` Im Detail 
+
+.left-column[
+
+Webbasiertes Lehrmittel
+
+]
+
+---
+template: detail-lehrmittel
+
+
+
+.right-column[
+
+### RMarkdown  `r fa("markdown")` 
+
+- Text und R-Code existieren im *gleichen* Dokument
+- Kein Copy & Paste von Code bzw. dessen Outputs <!-- Grafiken, Meldungen, Karten -->
+
+]
+
+
+---
+layout: false
+class: inverse
+
+```{r, echo = FALSE, out.width="75%"}
+
+knitr::include_graphics(c("rmarkdown-example-output.jpg"))
+
 
 ```
 
 ---
-layout: false
-name: woraus
-class: inverse
 
-# Woraus besteht arc2r?
+.panelset[
+.panel[.panel-name[RMarkdown]
 
-Die Lernumgebung arc2r besteht aus folgenden Komponenten:
+```{r, echo = FALSE}
+knitr::include_graphics("rmarkdown-example.jpg")
 
-- a) Webbasiertes Lehrmittel (*arc2r/book*)
-- b) RStudio im Browser\*
-- c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries (*arc2r/arc2r*)
+```
+]
 
-.footnote[\* wird von der ICT ZHAW zur Verfügung gestellt]
+.panel[.panel-name[Output]
+
+```{r, echo = FALSE}
+knitr::include_graphics("rmarkdown-example-output.jpg")
+
+```
+]
+]
+
+---
+template: detail-lehrmittel
+
+.right-column[
+
+### Source Code auf Github  `r fa("github-square")` 
+
+- ermöglicht ein *hohes Grad* an Kollaboration (international)
+- soll durch die Community weiterentwickelt werden
+- erhöht die Sichtbarkeit
+
+<!-- Bild einfügen -->
+
+]
 
 
 ---
-layout: true
+template: detail-lehrmittel
+
+.right-column[
+
+### Webbasiert bedeutet  `r fa("internet-explorer")` 
+
+- responsive <!-- screenshot tablet -->
+- interaktiv <!-- demo webmap -->
+- anpassbar <!-- demo schriftarten, -grösse, Inhaltsverzeichnis -->
+- kommentierbar <!-- demo kommentare -->
+
+<!-- Bild einfügen -->
+
+]
+
+
+---
+name: detail-virtuallab
 class: inverse 
 
-# Im Detail
+# `r fa("box-open")` Im Detail 
+
+.left-column[
+
+Virtual Lab im Browser
+
+]
+
 
 ---
 
-### a) Webbasiertes Lehrmittel
+template: detail-virtuallab
 
-- entwickelt in `R` mit `RMarkdown` und `Bookdown`
---
+.right-column[
 
-  - Text und R-Code existieren im gleichen Dokument
---
+### RStudio im Browser  `r fa("internet-explorer")` 
 
-  - Kein Copy & Paste von Code bzw. Code-outputs (z.B. Grafiken)
---
-
-- Source Code auf Github
---
-
-  - ermöglicht ein hohes Grad an Kollaboration
---
-
-  - soll durch die Community weiterentwickelt werden
---
-
-  - erhöht die Sichtbarkeit
---
-
-- webbasiert bedeutet: 
---
-
-  - responsive <!-- screenshot tablet -->
---
-
-  - interaktiv <!-- demo webmap -->
---
-
-  - anpassbar <!-- demo schriftarten, -grösse, Inhaltsverzeichnis -->
---
-
-  - kommentierbar <!-- demo kommentare -->
----
-
-template: woraus
-
----
-
-### b) RStudio im Browser
-
-- wurde nicht im Projekt entwickelt (wird von der ICT ZHAW zur Verfügung gestellt)
-
---
-
-- ermöglicht schneller Einstieg mit ZHAW Kürzel / Passwort
-
---
-
+- bestehende Infrastruktur (ICT ZHAW) 
 - Keine Installation von R / RStudio notwendig
-
---
-
 - ist Betriebssystem unabhängig
+- schneller Einstieg mit ZHAW Kürzel / Passwort
 
---
+verkürzt die Distanz *lesen → selbst ausführen*
 
-- verkürzt die Distanz *lesen* zu *→ selbst ausführen*
+<!-- Bild einfügen -->
+
+]
+
 
 ---
+template: detail-virtuallab
 
-template: woraus
+.right-column[
 
----
-### c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries
+### R Package  `r fa("tools")` 
 
-Um die Distanz *lesen → selbst ausführen* weiter zu verkürzen, haben wir ein `R`-Package entwickelt.
+- verkürzt die Distanz *lesen → selbst ausführen*
+- Auslieferung von 
+  - benötigten Geodatensätze
+  - benötigten Libraries
+  - R-Code zum selbst ausführen (als RMarkdown Template)
 
---
+]
 
-Wird dieses Package installiert, enthält der Nutzer / die Nutzerin:
 
---
 
-- alle Geodatensätze, die wir im Lehrmittel verwenden
-
---
-
-- alle Libraries, die wir im Lehrmittel verwenden
-
---
-
-- der Gesamte Code, die wir im Lehrmittel verwenden (als RMarkdown Template)
 
 
 

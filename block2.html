@@ -3,21 +3,23 @@
   <head>
     <title>All Things R spatial: Räumliche Daten in R</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Nils Ratnaweera" />
-    <meta name="date" content="2021-02-28" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <meta name="author" content="Nils Ratnaweera (ZHAW)" />
+    <meta name="date" content="2021-03-02" />
+    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.5.9000/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.5.9000/panelset.js"></script>
+    <link rel="stylesheet" href="mystyle.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 # All Things <code>R</code> spatial: Räumliche Daten in <code>R</code>
-## 🖈 <br/> Teil 2 (von 4)
-### Nils Ratnaweera
-### ZHAW IUNR
-### 2021-02-28
+## Teil 2 (von 4)
+### Nils Ratnaweera (ZHAW)
+### 2021-03-02
 
 ---
 
@@ -27,129 +29,164 @@ class: middle, center
 # Block 2: Was haben wir entwickelt?
 
 
----
-layout: true
-# Was haben wir entwickelt?
 
 
----
-class: inverse
-
-Eine Lernumgebung, um den Wechsel `R` → ArcGIS zu erleichtern
---
-
-&lt;img src="logo.svg" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 layout: false
-name: woraus
 class: inverse
 
-# Woraus besteht arc2r?
+# Was haben wir entwickelt?
 
-Die Lernumgebung arc2r besteht aus folgenden Komponenten:
 
-- a) Webbasiertes Lehrmittel (*arc2r/book*)
-- b) RStudio im Browser\*
-- c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries (*arc2r/arc2r*)
+--
 
-.footnote[\* wird von der ICT ZHAW zur Verfügung gestellt]
+Eine *Lernumgebung*, um den Wechsel `R` → ArcGIS zu erleichtern
+
+Aufgeteilt in zwei Komponenten (Arbeitspakete):
+
+1. &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M425.7 256c-16.9 0-32.8-9-41.4-23.4L320 126l-64.2 106.6c-8.7 14.5-24.6 23.5-41.5 23.5-4.5 0-9-.6-13.3-1.9L64 215v178c0 14.7 10 27.5 24.2 31l216.2 54.1c10.2 2.5 20.9 2.5 31 0L551.8 424c14.2-3.6 24.2-16.4 24.2-31V215l-137 39.1c-4.3 1.3-8.8 1.9-13.3 1.9zm212.6-112.2L586.8 41c-3.1-6.2-9.8-9.8-16.7-8.9L320 64l91.7 152.1c3.8 6.3 11.4 9.3 18.5 7.3l197.9-56.5c9.9-2.9 14.7-13.9 10.2-23.1zM53.2 41L1.7 143.8c-4.6 9.2.3 20.2 10.1 23l197.9 56.5c7.1 2 14.7-1 18.5-7.3L320 64 69.8 32.1c-6.9-.8-13.5 2.7-16.6 8.9z"/&gt;&lt;/svg&gt; Webbasiertes Lehrmittel
+2. &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M425.7 256c-16.9 0-32.8-9-41.4-23.4L320 126l-64.2 106.6c-8.7 14.5-24.6 23.5-41.5 23.5-4.5 0-9-.6-13.3-1.9L64 215v178c0 14.7 10 27.5 24.2 31l216.2 54.1c10.2 2.5 20.9 2.5 31 0L551.8 424c14.2-3.6 24.2-16.4 24.2-31V215l-137 39.1c-4.3 1.3-8.8 1.9-13.3 1.9zm212.6-112.2L586.8 41c-3.1-6.2-9.8-9.8-16.7-8.9L320 64l91.7 152.1c3.8 6.3 11.4 9.3 18.5 7.3l197.9-56.5c9.9-2.9 14.7-13.9 10.2-23.1zM53.2 41L1.7 143.8c-4.6 9.2.3 20.2 10.1 23l197.9 56.5c7.1 2 14.7-1 18.5-7.3L320 64 69.8 32.1c-6.9-.8-13.5 2.7-16.6 8.9z"/&gt;&lt;/svg&gt; Virtual Lab im Browser
+--
+
+  - ZHAW-RStudio (rstudio.zhaw.ch)
+--
+  
+  - R Package
+  
 
 
 ---
-layout: true
+name: detail-lehrmittel
 class: inverse 
 
-# Im Detail
+
+# &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M425.7 256c-16.9 0-32.8-9-41.4-23.4L320 126l-64.2 106.6c-8.7 14.5-24.6 23.5-41.5 23.5-4.5 0-9-.6-13.3-1.9L64 215v178c0 14.7 10 27.5 24.2 31l216.2 54.1c10.2 2.5 20.9 2.5 31 0L551.8 424c14.2-3.6 24.2-16.4 24.2-31V215l-137 39.1c-4.3 1.3-8.8 1.9-13.3 1.9zm212.6-112.2L586.8 41c-3.1-6.2-9.8-9.8-16.7-8.9L320 64l91.7 152.1c3.8 6.3 11.4 9.3 18.5 7.3l197.9-56.5c9.9-2.9 14.7-13.9 10.2-23.1zM53.2 41L1.7 143.8c-4.6 9.2.3 20.2 10.1 23l197.9 56.5c7.1 2 14.7-1 18.5-7.3L320 64 69.8 32.1c-6.9-.8-13.5 2.7-16.6 8.9z"/&gt;&lt;/svg&gt; Im Detail 
+
+.left-column[
+
+Webbasiertes Lehrmittel
+
+]
+
+---
+template: detail-lehrmittel
+
+
+
+.right-column[
+
+### RMarkdown  &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/&gt;&lt;/svg&gt; 
+
+- Text und R-Code existieren im *gleichen* Dokument
+- Kein Copy &amp; Paste von Code bzw. dessen Outputs &lt;!-- Grafiken, Meldungen, Karten --&gt;
+
+]
+
+
+---
+layout: false
+class: inverse
+
+&lt;img src="rmarkdown-example-output.jpg" width="75%" /&gt;
 
 ---
 
-### a) Webbasiertes Lehrmittel
+.panelset[
+.panel[.panel-name[RMarkdown]
 
-- entwickelt in `R` mit `RMarkdown` und `Bookdown`
---
+&lt;img src="rmarkdown-example.jpg" width="1185" /&gt;
+]
 
-  - Text und R-Code existieren im gleichen Dokument
---
+.panel[.panel-name[Output]
 
-  - Kein Copy &amp; Paste von Code bzw. Code-outputs (z.B. Grafiken)
---
-
-- Source Code auf Github
---
-
-  - ermöglicht ein hohes Grad an Kollaboration
---
-
-  - soll durch die Community weiterentwickelt werden
---
-
-  - erhöht die Sichtbarkeit
---
-
-- webbasiert bedeutet: 
---
-
-  - responsive &lt;!-- screenshot tablet --&gt;
---
-
-  - interaktiv &lt;!-- demo webmap --&gt;
---
-
-  - anpassbar &lt;!-- demo schriftarten, -grösse, Inhaltsverzeichnis --&gt;
---
-
-  - kommentierbar &lt;!-- demo kommentare --&gt;
----
-
-template: woraus
+&lt;img src="rmarkdown-example-output.jpg" width="1932" /&gt;
+]
+]
 
 ---
+template: detail-lehrmittel
 
-### b) RStudio im Browser
+.right-column[
 
-- wurde nicht im Projekt entwickelt (wird von der ICT ZHAW zur Verfügung gestellt)
+### Source Code auf Github  &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/&gt;&lt;/svg&gt; 
 
---
+- ermöglicht ein *hohes Grad* an Kollaboration (international)
+- soll durch die Community weiterentwickelt werden
+- erhöht die Sichtbarkeit
 
-- ermöglicht schneller Einstieg mit ZHAW Kürzel / Passwort
+&lt;!-- Bild einfügen --&gt;
 
---
+]
 
+
+---
+template: detail-lehrmittel
+
+.right-column[
+
+### Webbasiert bedeutet  &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M483.049 159.706c10.855-24.575 21.424-60.438 21.424-87.871 0-72.722-79.641-98.371-209.673-38.577-107.632-7.181-211.221 73.67-237.098 186.457 30.852-34.862 78.271-82.298 121.977-101.158C125.404 166.85 79.128 228.002 43.992 291.725 23.246 329.651 0 390.94 0 436.747c0 98.575 92.854 86.5 180.251 42.006 31.423 15.43 66.559 15.573 101.695 15.573 97.124 0 184.249-54.294 216.814-146.022H377.927c-52.509 88.593-196.819 52.996-196.819-47.436H509.9c6.407-43.581-1.655-95.715-26.851-141.162zM64.559 346.877c17.711 51.15 53.703 95.871 100.266 123.304-88.741 48.94-173.267 29.096-100.266-123.304zm115.977-108.873c2-55.151 50.276-94.871 103.98-94.871 53.418 0 101.981 39.72 103.981 94.871H180.536zm184.536-187.6c21.425-10.287 48.563-22.003 72.558-22.003 31.422 0 54.274 21.717 54.274 53.722 0 20.003-7.427 49.007-14.569 67.867-26.28-42.292-65.986-81.584-112.263-99.586z"/&gt;&lt;/svg&gt; 
+
+- responsive &lt;!-- screenshot tablet --&gt;
+- interaktiv &lt;!-- demo webmap --&gt;
+- anpassbar &lt;!-- demo schriftarten, -grösse, Inhaltsverzeichnis --&gt;
+- kommentierbar &lt;!-- demo kommentare --&gt;
+
+&lt;!-- Bild einfügen --&gt;
+
+]
+
+
+---
+name: detail-virtuallab
+class: inverse 
+
+# &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M425.7 256c-16.9 0-32.8-9-41.4-23.4L320 126l-64.2 106.6c-8.7 14.5-24.6 23.5-41.5 23.5-4.5 0-9-.6-13.3-1.9L64 215v178c0 14.7 10 27.5 24.2 31l216.2 54.1c10.2 2.5 20.9 2.5 31 0L551.8 424c14.2-3.6 24.2-16.4 24.2-31V215l-137 39.1c-4.3 1.3-8.8 1.9-13.3 1.9zm212.6-112.2L586.8 41c-3.1-6.2-9.8-9.8-16.7-8.9L320 64l91.7 152.1c3.8 6.3 11.4 9.3 18.5 7.3l197.9-56.5c9.9-2.9 14.7-13.9 10.2-23.1zM53.2 41L1.7 143.8c-4.6 9.2.3 20.2 10.1 23l197.9 56.5c7.1 2 14.7-1 18.5-7.3L320 64 69.8 32.1c-6.9-.8-13.5 2.7-16.6 8.9z"/&gt;&lt;/svg&gt; Im Detail 
+
+.left-column[
+
+Virtual Lab im Browser
+
+]
+
+
+---
+
+template: detail-virtuallab
+
+.right-column[
+
+### RStudio im Browser  &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M483.049 159.706c10.855-24.575 21.424-60.438 21.424-87.871 0-72.722-79.641-98.371-209.673-38.577-107.632-7.181-211.221 73.67-237.098 186.457 30.852-34.862 78.271-82.298 121.977-101.158C125.404 166.85 79.128 228.002 43.992 291.725 23.246 329.651 0 390.94 0 436.747c0 98.575 92.854 86.5 180.251 42.006 31.423 15.43 66.559 15.573 101.695 15.573 97.124 0 184.249-54.294 216.814-146.022H377.927c-52.509 88.593-196.819 52.996-196.819-47.436H509.9c6.407-43.581-1.655-95.715-26.851-141.162zM64.559 346.877c17.711 51.15 53.703 95.871 100.266 123.304-88.741 48.94-173.267 29.096-100.266-123.304zm115.977-108.873c2-55.151 50.276-94.871 103.98-94.871 53.418 0 101.981 39.72 103.981 94.871H180.536zm184.536-187.6c21.425-10.287 48.563-22.003 72.558-22.003 31.422 0 54.274 21.717 54.274 53.722 0 20.003-7.427 49.007-14.569 67.867-26.28-42.292-65.986-81.584-112.263-99.586z"/&gt;&lt;/svg&gt; 
+
+- bestehende Infrastruktur (ICT ZHAW) 
 - Keine Installation von R / RStudio notwendig
-
---
-
 - ist Betriebssystem unabhängig
+- schneller Einstieg mit ZHAW Kürzel / Passwort
 
---
+verkürzt die Distanz *lesen → selbst ausführen*
 
-- verkürzt die Distanz *lesen* zu *→ selbst ausführen*
+&lt;!-- Bild einfügen --&gt;
+
+]
+
 
 ---
+template: detail-virtuallab
 
-template: woraus
+.right-column[
 
----
-### c) Einfacher Zugriff auf Code, Daten und notwendigen Libraries
+### R Package  &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"/&gt;&lt;/svg&gt; 
 
-Um die Distanz *lesen → selbst ausführen* weiter zu verkürzen, haben wir ein `R`-Package entwickelt.
+- verkürzt die Distanz *lesen → selbst ausführen*
+- Auslieferung von 
+  - benötigten Geodatensätze
+  - benötigten Libraries
+  - R-Code zum selbst ausführen (als RMarkdown Template)
 
---
+]
 
-Wird dieses Package installiert, enthält der Nutzer / die Nutzerin:
 
---
 
-- alle Geodatensätze, die wir im Lehrmittel verwenden
-
---
-
-- alle Libraries, die wir im Lehrmittel verwenden
-
---
-
-- der Gesamte Code, die wir im Lehrmittel verwenden (als RMarkdown Template)
 
 
 
@@ -243,6 +280,33 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+<style>
+.logo {
+  background-image: url(logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {
