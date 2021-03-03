@@ -84,7 +84,7 @@ class: inverse
 
 --
 
-- ein sicherer Umgang mit räumlichen Daten ist deshalb eine zentrale Fähigkeit
+- ein sicherer Umgang mit räumlichen Daten ist deshalb eine zentrale Fähigkeit für viele Abgänger des Dept. N
 
 --
 
