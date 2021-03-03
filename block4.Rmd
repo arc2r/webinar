@@ -75,7 +75,7 @@ Das macht ArcGIS leichter zugänglich
 
 
 .pull-left[
-Mit ArcGIS hat man grundsätzlich *eine* Ansprechsperson (ESRI)
+Mit ArcGIS hat man grundsätzlich *einen* Ansprechspartner (ESRI)
 ]
 
 .pull-right[
@@ -109,7 +109,7 @@ ArcGIS: Für jedes Problem ein Tool
 ]
 
 .pull-right[
-`R`: Minimales Set an Funktionen die auf die eigenen bedürfnissen angepasst werden können 
+`R`: Minimales Set an Funktionen die auf die eigenen Bedürfnisse angepasst werden können 
 ]
 
 ---
