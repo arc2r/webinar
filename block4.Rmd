@@ -144,7 +144,7 @@ Verwendet branchenübliche Standards
 
 Für jedes Problem ein Tool
 
-[`r fa("link")` arc2r.github.com/book](https://arc2r.github.io/book/20_Geoprocessing_Tools.html)
+[`r fa("link")` arc2r.github.io/book](https://arc2r.github.io/book/20_Geoprocessing_Tools.html)
 
 
 ]

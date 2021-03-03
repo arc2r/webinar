@@ -53,7 +53,7 @@ class: inverse, middle, center
 
 --
 
-[`r fa("link")` arc2r.github.com/book](https://arc2r.github.io/book/)
+[`r fa("link")` arc2r.github.io/book](https://arc2r.github.io/book/)
 
 
 ---
