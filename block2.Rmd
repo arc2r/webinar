@@ -151,7 +151,6 @@ class: inverse, middle, center
 
 ## `r fa("box-open")` Virtual Lab im Browser
 
-[rstudio-ide.zhaw.ch](https://rstudio-ide.zhaw.ch/)
 
 ---
 name: detail-virtuallab
@@ -175,8 +174,9 @@ template: detail-virtuallab
 
 ### Besteht aus:
 
-- RStudio im Browser
-- RPackage
+- RStudio im Browser [rstudio-ide.zhaw.ch](https://rstudio-ide.zhaw.ch/)
+- RPackage [arc2r.github.io/arc2r](https://arc2r.github.io/arc2r/)
+
 ]
 
 ???
@@ -191,7 +191,7 @@ template: detail-virtuallab
 
 .right-column[
 
-### RStudio im Browser
+### RStudio im Browser [rstudio-ide.zhaw.ch](https://rstudio-ide.zhaw.ch/)
 
 verkürzt die Distanz *lesen → selbst ausführen*
 
@@ -212,7 +212,7 @@ template: detail-virtuallab
 
 .right-column[
 
-### R Package `r fa("tools")`
+### R Package `r fa("tools")` [arc2r.github.io/arc2r](https://arc2r.github.io/arc2r/)
 
 - verkürzt die Distanz *lesen → selbst ausführen*
 - Auslieferung von 
@@ -256,7 +256,7 @@ template: detail-virtuallab
 
 Einfache Auslieferung von *Metadaten* 
 
-[`r fa("link")` arc2r.github.com/arc2r](https://arc2r.github.io/arc2r/)
+[`r fa("link")` arc2r.github.io/arc2r/](https://arc2r.github.io/arc2r/)
 
 
 ]
@@ -264,6 +264,7 @@ Einfache Auslieferung von *Metadaten*
 ???
 
 - Wenn man ein R-Package entwickelt und dabei github nutzt, ist eine solche website fast schon "gratis" mit dabei
+- Demonstrieren, wie diese hilfe auch über R-Studio aufgerufen werden kann
 
 ---
 
@@ -307,3 +308,10 @@ knitr::include_graphics("choose_chapter.jpg")
 - kurz demonstrieren?
 
 ---
+
+
+
+class: inverse, middle
+
+
+## Ende des zweiten Blockes... Fragen?

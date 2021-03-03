@@ -24,11 +24,28 @@ xaringanExtra::use_panelset()
 ## Was haben wir gelernt?
 
 - Konzeptionelle Unterschiede zwischen ArcGIS und `R`
-- Eine Reihe wichtiger Tools
+
+--
+
+- Wichtige Tools für Forschung und Lehre
+
+--
+
   - `R-Markdown` / `bookdown`
+
+--
+
   - Schreiben von R-Packages (`pkgdown`)
-  - Kollaboration über Github
-  - Verwendung von Github-Actions
+
+--
+
+  - Git, Github und Github Actions
+
+
+---
+class: inverse, middle, center
+
+## Konzeptionelle Unterschiede ArcGIS ↔ `R`
 
 
 
@@ -43,9 +60,9 @@ class: inverse
 
 .pull-left[
 
-<img src="https://www.zhaw.ch/storage/lsfm/institute-zentren/upload/ArcGIS-Pro.png" alt="ESRI", style = "height: 50px">
+<img src="esri.png" alt="ESRI", style = "height: 50px">
 
-Grundbaustein in ArcMap ist die *Map*. 
+Grundbaustein ist die *Map*. 
 ```{r, echo = FALSE}
 knitr::include_graphics("gis_wieselundco.jpg")
 ```
@@ -58,7 +75,7 @@ knitr::include_graphics("gis_wieselundco.jpg")
 <img src="https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-White.png" alt="ESRI", style = "height: 50px">
 
 
-Grundbaustein in `R` ist das *Script*
+Grundbaustein ist das *Script*
 
 ```{r, echo = FALSE}
 knitr::include_graphics("rstudio.jpg")
@@ -82,10 +99,10 @@ Das macht ArcGIS leichter zugänglich
 
 .pull-left[
 
-<img src="https://www.zhaw.ch/storage/lsfm/institute-zentren/upload/ArcGIS-Pro.png" alt="ESRI", style = "height: 50px">
+<img src="esri.png" alt="ESRI", style = "height: 50px">
 
 
-*Eine* Ansprechsperson (ESRI)
+*Einen* Ansprechspartner (ESRI)
 ]
 
 .pull-right[
@@ -104,7 +121,7 @@ es gibt immer N+1 wege ein Problem in R zu lösen
 
 .pull-left[
 
-<img src="https://www.zhaw.ch/storage/lsfm/institute-zentren/upload/ArcGIS-Pro.png" alt="ESRI", style = "height: 50px">
+<img src="esri.png" alt="ESRI", style = "height: 50px">
 
 Verwendet oftmals Eigennamen  <!-- Beispiel Clip, Select,  -->  
 ]
@@ -122,7 +139,7 @@ Verwendet branchenübliche Standards
 
 .pull-left[
 
-<img src="https://www.zhaw.ch/storage/lsfm/institute-zentren/upload/ArcGIS-Pro.png" alt="ESRI", style = "height: 50px">
+<img src="esri.png" alt="ESRI", style = "height: 50px">
 
 
 Für jedes Problem ein Tool
@@ -137,19 +154,18 @@ Für jedes Problem ein Tool
 <img src="https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-White.png" alt="ESRI", style = "height: 50px">
 
 
-*Minimales Set* an Tools die auf die eigenen Bedürfnissen angepasst werden können 
+*Minimales Set* an Tools die auf die eigenen Bedürfnisse angepasst werden können 
+
 ]
 
 ---
 
-layout: true
+layout: false
 class: inverse
 
 ## Wo brilliert ArcGIS gegenüber `R`?
 
-
----
-
+--
 
 .pull-left[
 - Georeferenzieren
@@ -159,8 +175,10 @@ knitr::include_graphics("https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg")
 ```
 
 
-
 ]
+
+
+--
 
 .pull-right[
 - Karten digitalisieren
@@ -173,10 +191,19 @@ knitr::include_graphics("https://desktop.arcgis.com/de/arcmap/10.3/manage-data/c
 ]
 
 ---
-layout: false
-class: invert
 
-## Verwendung von R-Markdown, `bookdown`
+layout: false
+class: inverse, middle, center
+
+## Wichtige Tools für Forschung und Lehre
+
+---
+
+
+layout: false
+class: inverse
+
+## Verwendung von `R-Markdown`, `bookdown`
 
 
 - Text und R-Code existieren im *gleichen* Dokument
@@ -206,22 +233,26 @@ knitr::include_graphics("rmarkdown-example-output.jpg")
 Outputs wie zum Beispiel Grafiken, Messages, Karten
 
 ---
+
 layout: false
 class: inverse
 
 
+### Webbasiert ist die Zukunft!
 
----
-class: inverse 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GCmnvXXrpRk?start=126" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> *In HTML and the Web I trust*
+
+> \- *Yihui Xie (2019)*
 
 
-## Webbasiert ist die Zukunft!
+> 
+
 
 ---
 class: inverse 
 layout: true
-
-
 
 ### Source Code auf Github  `r fa("github-square")` 
 
@@ -237,13 +268,19 @@ knitr::include_graphics("Git-Network-dark.jpg")
 
 ---
 
-- Ressource soll durch die Community weiterentwickelt werden (*Pull requests*)
+- Ressource kann (und wird) durch die Community weiterentwickelt
 
 ```{r, echo = FALSE}
 knitr::include_graphics("gh-pullrequests-dark.jpg")
 
 ```
 
+???
+
+Stichwort *Pull requests*
+Demonstration machen
+ 
+ 
 ---
 
 - erhöht die Sichtbarkeit
@@ -257,7 +294,79 @@ knitr::include_graphics("gh-stars-dark.jpg")
 ???
 
 github ist das "Facebook" von Opensource projekten und offenen lehrmitteln
+
+---
+
+#### Verwendung von Github Actions
+
+- vordefinierte "Rezepte" die bei bestimmten Ereignissen ausgeführt werden
+
+--
+
+  - z.B. wird das Buch bei Änderungen neu Kompiliert
+
+--
+
+- erlaubt das Testen von Code auf verschiedenen Plattformen (MacOS, Linux, Windows)
+
+--
+
+- Qualitätssicherung und Automatisierung
+
+
   
 
+---
 
+layout: false
+class: inverse
+
+# `r fa("binoculars")` Ausbilck 
+
+Wie geht es weiter?
+
+--
+
+- Einsatz von `arc2r` in Lehre (Bachelor und Master)
+
+--
+
+- Fortlaufende Ergänzung des Lehrmittels nach Bedarf
+
+--
+
+- Involvierung
+
+--
+
+  - Mitarbeitenden
+
+--
+
+  - Studierenden
+
+--
+
+  - Extern
+
+--
+
+- Folgeprojekt *DataChallenge@N*
+
+--
+
+  - Projektantrag eingereicht (1. März 2021)
+  
+--
+
+  - mit DataChallenge und Hackday Data Skills spielerisch vermitteln
+
+---
+
+
+
+class: inverse, middle
+
+
+## Vielen Dank an das Departament N und die AG Studium für die Bewilligung diesses Projekts!
 

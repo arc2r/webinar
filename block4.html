@@ -30,11 +30,28 @@ class: inverse
 ## Was haben wir gelernt?
 
 - Konzeptionelle Unterschiede zwischen ArcGIS und `R`
-- Eine Reihe wichtiger Tools
+
+--
+
+- Wichtige Tools für Forschung und Lehre
+
+--
+
   - `R-Markdown` / `bookdown`
+
+--
+
   - Schreiben von R-Packages (`pkgdown`)
-  - Kollaboration über Github
-  - Verwendung von Github-Actions
+
+--
+
+  - Git, Github und Github Actions
+
+
+---
+class: inverse, middle, center
+
+## Konzeptionelle Unterschiede ArcGIS ↔ `R`
 
 
 
@@ -49,9 +66,9 @@ class: inverse
 
 .pull-left[
 
-&lt;img src="https://www.zhaw.ch/storage/lsfm/institute-zentren/upload/ArcGIS-Pro.png" alt="ESRI", style = "height: 50px"&gt;
+&lt;img src="esri.png" alt="ESRI", style = "height: 50px"&gt;
 
-Grundbaustein in ArcMap ist die *Map*. 
+Grundbaustein ist die *Map*. 
 &lt;img src="gis_wieselundco.jpg" width="5120" /&gt;
 
 ]
@@ -62,7 +79,7 @@ Grundbaustein in ArcMap ist die *Map*.
 &lt;img src="https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-White.png" alt="ESRI", style = "height: 50px"&gt;
 
 
-Grundbaustein in `R` ist das *Script*
+Grundbaustein ist das *Script*
 
 &lt;img src="rstudio.jpg" width="2300" /&gt;
 
@@ -84,10 +101,10 @@ Das macht ArcGIS leichter zugänglich
 
 .pull-left[
 
-&lt;img src="https://www.zhaw.ch/storage/lsfm/institute-zentren/upload/ArcGIS-Pro.png" alt="ESRI", style = "height: 50px"&gt;
+&lt;img src="esri.png" alt="ESRI", style = "height: 50px"&gt;
 
 
-*Eine* Ansprechsperson (ESRI)
+*Einen* Ansprechspartner (ESRI)
 ]
 
 .pull-right[
@@ -106,7 +123,7 @@ es gibt immer N+1 wege ein Problem in R zu lösen
 
 .pull-left[
 
-&lt;img src="https://www.zhaw.ch/storage/lsfm/institute-zentren/upload/ArcGIS-Pro.png" alt="ESRI", style = "height: 50px"&gt;
+&lt;img src="esri.png" alt="ESRI", style = "height: 50px"&gt;
 
 Verwendet oftmals Eigennamen  &lt;!-- Beispiel Clip, Select,  --&gt;  
 ]
@@ -124,7 +141,7 @@ Verwendet branchenübliche Standards
 
 .pull-left[
 
-&lt;img src="https://www.zhaw.ch/storage/lsfm/institute-zentren/upload/ArcGIS-Pro.png" alt="ESRI", style = "height: 50px"&gt;
+&lt;img src="esri.png" alt="ESRI", style = "height: 50px"&gt;
 
 
 Für jedes Problem ein Tool
@@ -139,19 +156,18 @@ Für jedes Problem ein Tool
 &lt;img src="https://rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-White.png" alt="ESRI", style = "height: 50px"&gt;
 
 
-*Minimales Set* an Tools die auf die eigenen Bedürfnissen angepasst werden können 
+*Minimales Set* an Tools die auf die eigenen Bedürfnisse angepasst werden können 
+
 ]
 
 ---
 
-layout: true
+layout: false
 class: inverse
 
 ## Wo brilliert ArcGIS gegenüber `R`?
 
-
----
-
+--
 
 .pull-left[
 - Georeferenzieren
@@ -159,8 +175,10 @@ class: inverse
 ![](https://i.ytimg.com/vi/o2bq8yE0XWE/maxresdefault.jpg)&lt;!-- --&gt;
 
 
-
 ]
+
+
+--
 
 .pull-right[
 - Karten digitalisieren
@@ -171,10 +189,19 @@ class: inverse
 ]
 
 ---
-layout: false
-class: invert
 
-## Verwendung von R-Markdown, `bookdown`
+layout: false
+class: inverse, middle, center
+
+## Wichtige Tools für Forschung und Lehre
+
+---
+
+
+layout: false
+class: inverse
+
+## Verwendung von `R-Markdown`, `bookdown`
 
 
 - Text und R-Code existieren im *gleichen* Dokument
@@ -198,22 +225,26 @@ class: invert
 Outputs wie zum Beispiel Grafiken, Messages, Karten
 
 ---
+
 layout: false
 class: inverse
 
 
+### Webbasiert ist die Zukunft!
 
----
-class: inverse 
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/GCmnvXXrpRk?start=126" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&gt; *In HTML and the Web I trust*
+
+&gt; \- *Yihui Xie (2019)*
 
 
-## Webbasiert ist die Zukunft!
+&gt; 
+
 
 ---
 class: inverse 
 layout: true
-
-
 
 ### Source Code auf Github  &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/&gt;&lt;/svg&gt; 
 
@@ -226,10 +257,16 @@ layout: true
 
 ---
 
-- Ressource soll durch die Community weiterentwickelt werden (*Pull requests*)
+- Ressource kann (und wird) durch die Community weiterentwickelt
 
 &lt;img src="gh-pullrequests-dark.jpg" width="1275" /&gt;
 
+???
+
+Stichwort *Pull requests*
+Demonstration machen
+ 
+ 
 ---
 
 - erhöht die Sichtbarkeit
@@ -240,9 +277,81 @@ layout: true
 ???
 
 github ist das "Facebook" von Opensource projekten und offenen lehrmitteln
+
+---
+
+#### Verwendung von Github Actions
+
+- vordefinierte "Rezepte" die bei bestimmten Ereignissen ausgeführt werden
+
+--
+
+  - z.B. wird das Buch bei Änderungen neu Kompiliert
+
+--
+
+- erlaubt das Testen von Code auf verschiedenen Plattformen (MacOS, Linux, Windows)
+
+--
+
+- Qualitätssicherung und Automatisierung
+
+
   
 
+---
 
+layout: false
+class: inverse
+
+# &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M416 48c0-8.84-7.16-16-16-16h-64c-8.84 0-16 7.16-16 16v48h96V48zM63.91 159.99C61.4 253.84 3.46 274.22 0 404v44c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32V288h32V128H95.84c-17.63 0-31.45 14.37-31.93 31.99zm384.18 0c-.48-17.62-14.3-31.99-31.93-31.99H320v160h32v160c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-44c-3.46-129.78-61.4-150.16-63.91-244.01zM176 32h-64c-8.84 0-16 7.16-16 16v48h96V48c0-8.84-7.16-16-16-16zm48 256h64V128h-64v160z"/&gt;&lt;/svg&gt; Ausbilck 
+
+Wie geht es weiter?
+
+--
+
+- Einsatz von `arc2r` in Lehre (Bachelor und Master)
+
+--
+
+- Fortlaufende Ergänzung des Lehrmittels nach Bedarf
+
+--
+
+- Involvierung
+
+--
+
+  - Mitarbeitenden
+
+--
+
+  - Studierenden
+
+--
+
+  - Extern
+
+--
+
+- Folgeprojekt *DataChallenge@N*
+
+--
+
+  - Projektantrag eingereicht (1. März 2021)
+  
+--
+
+  - mit DataChallenge und Hackday Data Skills spielerisch vermitteln
+
+---
+
+
+
+class: inverse, middle
+
+
+## Vielen Dank an das Departament N und die AG Studium für die Bewilligung diesses Projekts!
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

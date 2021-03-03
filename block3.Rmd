@@ -23,19 +23,24 @@ library(fontawesome)
 xaringanExtra::use_panelset()
 ```
 
-## Erste Schritte `r fa("shoe-prints")`
+## Live Demo  `r fa("video")`
 
 ---
 
-- Mit ein bisschen Erfahrung in R ist die Handhabung von Geodaten kinderleicht
+> The first rule of live demos is
+
+> never do a live demo. Ever.
+
+> \- *Someone very smart*
 
 --
 
-- Schauen wir uns mal die Lernumgebung an, die wir entwickelt haben
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IW7Rqwwth84" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 --
 
-- dazu besuchen wir [arc2r.github.io/book](https://arc2r.github.io/book/)
+
+- [arc2r.github.io/book](https://arc2r.github.io/book/)
 
 ???
 
