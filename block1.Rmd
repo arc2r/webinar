@@ -126,7 +126,7 @@ knitr::include_graphics("geobim.jpg")
 
 --
 
-- Am Dep. wird deshalb hauptsächlich ArcGIS Unterrichtet
+- Am Dep. wird deshalb hauptsächlich ArcGIS unterrichtet
 
 --
 
@@ -134,11 +134,11 @@ knitr::include_graphics("geobim.jpg")
 
 --
   
-  - ... ist nicht Skalierbar (Stichwort HPC)
+  - ... ist nicht skalierbar (Stichwort HPC)
 
 --
   
-  - ... ist kaum Reproduzierbar
+  - ... ist kaum reproduzierbar
 
 --
 
@@ -181,7 +181,7 @@ class: inverse
 
 --
 
-... ist Skalierbar (läuft auf unserem HPC)
+... ist skalierbar (läuft auf unserem HPC)
   
 --
 
@@ -190,7 +190,7 @@ class: inverse
 
 --
 
-... ist OpenSource
+... ist Open Source 
   
 --
 
