@@ -21,6 +21,7 @@ class: inverse, middle
 library(fontawesome)
 xaringanExtra::use_panelset()
 xaringanExtra::use_fit_screen()
+xaringanExtra::use_share_again()
 ```
 
 # Ablauf
