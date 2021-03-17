@@ -1,19 +1,17 @@
 ---
-title: "All things `R` spatial"
+title: "All Things `R` Spatial"
 subtitle: Slides für das Webinar vom 3. März 2021
-output:
-  github_document: 
-    pandoc_args: "--output=Readme.md" 
-  html_document: default
+output: 
+  html_document: 
+    css: indexstyle.css
 ---
 
-Slides Übersicht:
+Klicke auf das Bild um die entsprechenden Slides zu sehen!
 
-- [Block 1](block1.html): (edit source: [block1.Rmd](https://github.com/arc2r/webinar/edit/master/block1.Rmd)) Vorstellung des Projekts
-- [Block 2](block2.html): (edit source: [block2.Rmd](https://github.com/arc2r/webinar/edit/master/block2.Rmd)) Was haben wir entwickelt?
-- [Block 3](block3.html): (edit source: [block3.Rmd](https://github.com/arc2r/webinar/edit/master/block3.Rmd)) Erste Schritte mit *arc2r* (alle arbeiten mit RStudio)
-- [Block 4](block4.html): (edit source: [block4.Rmd](https://github.com/arc2r/webinar/edit/master/block4.Rmd)) Ein Schritt zurück: Vorstellung der Tools und lessons learnt
-
+<p class = "imagecaption"><a href="block1.html"><img src="block1.png" style="width: 100%"></a>Warum wir dieses Projekt lanciert haben</p>
+<p class = "imagecaption"><a href="block2.html"><img src="block2.png" style="width: 100%"></a>Was haben wir entwickelt?</p>
+<p class = "imagecaption"><a href="block3.html"><img src="block3.png" style="width: 100%"></a>Erste Schritte mit arc2r</p>
+<p class = "imagecaption"><a href="block4.html"><img src="block4.png" style="width: 100%"></a>Ein Schritt zurück: Vorstellung der Tools und lessons learned </p>
 
 
 
